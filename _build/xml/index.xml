@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="classteleop__operation_1_1_publish_thread" kind="class"><name>teleop_operation::PublishThread</name>
+    <member refid="classteleop__operation_1_1_publish_thread_1a1e8e9865c70bced59431d426836a9054" kind="variable"><name>publisher</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1ae705c309117a25968e4330f01a53e973" kind="variable"><name>x</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1aa85812d65825b9bb9136a56c0367b5f1" kind="variable"><name>y</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1add44e11850919f90e8e7db195b9372ea" kind="variable"><name>z</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1ab10d2af51deefd3b9a871d1cff955b2e" kind="variable"><name>th</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1a9f7c728d5ee0bfdb3210f963efc66657" kind="variable"><name>speed</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1a75136504f772f0464c421e89d2682a08" kind="variable"><name>turn</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1aa691228a64e2a22c88c064363445f5fd" kind="variable"><name>condition</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1aa07cb7fb517e1d4e175714b4391186f0" kind="variable"><name>done</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1aede8064a30beeb5b403208a322816f67" kind="variable"><name>timeout</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1abf9dd086ee766ce2f4c9666731da8343" kind="function"><name>__init__</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1a622a10b926d83a21a8333e47c5ee5d1a" kind="function"><name>wait_for_subscribers</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1a6526f1bf9415bef4c99825e38375a7f3" kind="function"><name>update</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1a2a09a20d45c33a2a9e965cf1681d3744" kind="function"><name>stop</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1a2d3aea516b03406c29cc9b5df76138f7" kind="function"><name>stop_motion</name></member>
+    <member refid="classteleop__operation_1_1_publish_thread_1a3f231a2c778ba71c55fed5023b7651d3" kind="function"><name>run</name></member>
+  </compound>
+  <compound refid="namespaceautonomous__drive" kind="namespace"><name>autonomous_drive</name>
+    <member refid="namespaceautonomous__drive_1a198a2b15e70c2b458d0f647325d8bd3a" kind="variable"><name>state</name></member>
+    <member refid="namespaceautonomous__drive_1abe7bf9a31a43b763f37bddad2457c4d8" kind="variable"><name>goalf</name></member>
+    <member refid="namespaceautonomous__drive_1adb1a4401abc25d9f39a9c756f0e5ba4e" kind="function"><name>refresh_variables</name></member>
+    <member refid="namespaceautonomous__drive_1a02054103f62ea784d400cb4060dff703" kind="function"><name>CallBack_odometry</name></member>
+    <member refid="namespaceautonomous__drive_1a01c053da76775a7077ac3fa02610ab6a" kind="function"><name>CallBack</name></member>
+    <member refid="namespaceautonomous__drive_1ad596380351193894e48f76137469503a" kind="function"><name>action_client_set_goal</name></member>
+    <member refid="namespaceautonomous__drive_1a2620136798b5db050411e38994960396" kind="function"><name>action_client_init</name></member>
+    <member refid="namespaceautonomous__drive_1a05a14c4ae40dffe61826b28e5461cecd" kind="function"><name>CallBack_reset</name></member>
+    <member refid="namespaceautonomous__drive_1a28d8f673172c80c30feab545f47e5972" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespaceconf" kind="namespace"><name>conf</name>
+    <member refid="conf_8py_1a332f430461432dc465213f884a1e4967" kind="variable"><name>shell</name></member>
+    <member refid="conf_8py_1a45653c983098153b78e33600e39230eb" kind="variable"><name>project</name></member>
+    <member refid="conf_8py_1a33fa97cf51dcb25970fbf53f10159589" kind="variable"><name>copyright</name></member>
+    <member refid="conf_8py_1a637c239d256432248aa8d9f3ab0b8c52" kind="variable"><name>author</name></member>
+    <member refid="conf_8py_1a325dc746d8bf05c54d26351c35a21d90" kind="variable"><name>release</name></member>
+    <member refid="conf_8py_1ae475e080536acb271a0a0efe56c3ba42" kind="variable"><name>extensions</name></member>
+    <member refid="conf_8py_1ae850ae634911b713e036b43894fdd525" kind="variable"><name>templates_path</name></member>
+    <member refid="conf_8py_1a7ad48fb6f3e9b129c02346ea0d3527c1" kind="variable"><name>exclude_patterns</name></member>
+    <member refid="conf_8py_1a3117edf4443d9b8c70a9f0f44294ba79" kind="variable"><name>highlight_language</name></member>
+    <member refid="conf_8py_1a10af2a769eb3bd3322e874f677e435b1" kind="variable"><name>source_suffix</name></member>
+    <member refid="conf_8py_1a6fcd7e5236f355b1e1a55f9d95988810" kind="variable"><name>master_doc</name></member>
+    <member refid="conf_8py_1a6c3bfcc1a44546c1c75ce20f55bd0fd6" kind="variable"><name>html_theme</name></member>
+    <member refid="conf_8py_1af4fb5d8851ccaade135c2668dd3ced41" kind="variable"><name>html_static_path</name></member>
+    <member refid="conf_8py_1a8375f4f963de3ac8026eaa9beced9564" kind="variable"><name>intersphinx_mapping</name></member>
+    <member refid="conf_8py_1a8fe7f0d85f975f4ecba5cb6066959a09" kind="variable"><name>todo_include_todos</name></member>
+    <member refid="conf_8py_1acb47d2c0c2904fa7d36b63142533f383" kind="variable"><name>breathe_projects</name></member>
+    <member refid="conf_8py_1a6eba2d2c7ae923054b1c49e686ec89b9" kind="variable"><name>breathe_default_project</name></member>
+    <member refid="conf_8py_1a54585428ce84441199d9dfd7087e2243" kind="variable"><name>breathe_default_members</name></member>
+  </compound>
+  <compound refid="namespacemaster__control" kind="namespace"><name>master_control</name>
+    <member refid="namespacemaster__control_1ae19c95da260924a1f1e21af75981a361" kind="variable"><name>msg</name></member>
+    <member refid="namespacemaster__control_1a3738cbe9b8cb8bab7a46877625a1b574" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespaceobstacle__avoidance" kind="namespace"><name>obstacle_avoidance</name>
+    <member refid="namespaceobstacle__avoidance_1aa6f0567a135b817b6a97810726fc85b3" kind="variable"><name>l</name></member>
+    <member refid="namespaceobstacle__avoidance_1aed79823ada0b07b0b1c06b07b5f2c2ec" kind="variable"><name>r</name></member>
+    <member refid="namespaceobstacle__avoidance_1abfdac0b8cf8ae8ff684741bb157cc31d" kind="variable"><name>f</name></member>
+    <member refid="namespaceobstacle__avoidance_1a115117af45534a6af5a311180ef4e796" kind="function"><name>CallBack_avoid</name></member>
+    <member refid="namespaceobstacle__avoidance_1a8201cd0fe8f999f092ce132a7a2c833e" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespacestd__srvs_1_1srv" kind="namespace"><name>std_srvs::srv</name>
+  </compound>
+  <compound refid="namespaceteleop__operation" kind="namespace"><name>teleop_operation</name>
+    <member refid="namespaceteleop__operation_1ae455bcc4a2ce8f8494b903b5f6fb7af9" kind="variable"><name>msg</name></member>
+    <member refid="namespaceteleop__operation_1a25459407643eccbad423c1e033037f6f" kind="variable"><name>l</name></member>
+    <member refid="namespaceteleop__operation_1a998e8732e0776d04560dbe86ca6a6dfb" kind="variable"><name>r</name></member>
+    <member refid="namespaceteleop__operation_1aeac98c7804d50e9fe48e659ad8e8579d" kind="variable"><name>f</name></member>
+    <member refid="namespaceteleop__operation_1ada8db3fe389ca35db358375697a3ae77" kind="variable"><name>fl</name></member>
+    <member refid="namespaceteleop__operation_1a9c69cf192d025c984009320a335414fa" kind="variable"><name>fr</name></member>
+    <member refid="namespaceteleop__operation_1a3aa651b8b1ec1e55f4aad79d04536c04" kind="variable"><name>moveBindings</name></member>
+    <member refid="namespaceteleop__operation_1ab93ac42c9e229876ddd1070c0233b096" kind="variable"><name>speedBindings</name></member>
+    <member refid="namespaceteleop__operation_1afaa894c082f7e3b52df863dda34def22" kind="variable"><name>active_</name></member>
+    <member refid="namespaceteleop__operation_1af5fab2b3a052afdac39211be0fdfb911" kind="variable"><name>f1</name></member>
+    <member refid="namespaceteleop__operation_1a020204790f87623c5e14f76b01637059" kind="variable"><name>f2</name></member>
+    <member refid="namespaceteleop__operation_1a265b40e4060ebb80f2c736526774c822" kind="variable"><name>settings</name></member>
+    <member refid="namespaceteleop__operation_1ad8cfa722d01039f770748f1b4db1c9b5" kind="variable"><name>speed</name></member>
+    <member refid="namespaceteleop__operation_1a46a99f5eda19dfe9580fdb5daf11c825" kind="variable"><name>turn</name></member>
+    <member refid="namespaceteleop__operation_1aaf4aff1db14beb5cef518407fbf093b8" kind="variable"><name>repeat</name></member>
+    <member refid="namespaceteleop__operation_1ae9534fbb923b4d7cbb384d779f62bec8" kind="variable"><name>key_timeout</name></member>
+    <member refid="namespaceteleop__operation_1adcc8aca2c9e9b0e7ad08b229c047d3aa" kind="variable"><name>pub_thread</name></member>
+    <member refid="namespaceteleop__operation_1a242fef25d7c6bc747881a3ebdb82fdb3" kind="variable"><name>x</name></member>
+    <member refid="namespaceteleop__operation_1a4e0484356f5b728d81f25e22b0d6f910" kind="variable"><name>y</name></member>
+    <member refid="namespaceteleop__operation_1abc5df5e4a49d57466e54eaf6a309ff2f" kind="variable"><name>z</name></member>
+    <member refid="namespaceteleop__operation_1a983a9f83a84f0ebf895faf586265f669" kind="variable"><name>th</name></member>
+    <member refid="namespaceteleop__operation_1a46e6fbab95e9e7f6b51426fdc1cc4ae8" kind="variable"><name>status</name></member>
+    <member refid="namespaceteleop__operation_1a9ceed5bebdf8ca8a2a36672f9fb54a71" kind="variable"><name>rate</name></member>
+    <member refid="namespaceteleop__operation_1a6bd51e59258c03a9de31b5a4bf5fe62a" kind="variable"><name>moveBindings_temp</name></member>
+    <member refid="namespaceteleop__operation_1aa7527156ad9cc21cf9f222cf6384bf45" kind="variable"><name>key</name></member>
+    <member refid="namespaceteleop__operation_1a08d0fc9260fc367a6166bb0b27ad08a3" kind="variable"><name>flag</name></member>
+    <member refid="namespaceteleop__operation_1a66051e67ee7305183e00fe4a329390f5" kind="function"><name>getKey</name></member>
+    <member refid="namespaceteleop__operation_1a96bc55bb6ee915dd5b84db329179caba" kind="function"><name>CallBack_avoidance</name></member>
+    <member refid="namespaceteleop__operation_1aeff5576db385051affabb05219de3ca3" kind="function"><name>new_command</name></member>
+    <member refid="namespaceteleop__operation_1a501c7f901bbea1f518b427bd4ec57ac0" kind="function"><name>vels</name></member>
+  </compound>
+  <compound refid="_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="conf_8py" kind="file"><name>conf.py</name>
+  </compound>
+  <compound refid="autonomous__drive_8py" kind="file"><name>autonomous_drive.py</name>
+  </compound>
+  <compound refid="master__control_8py" kind="file"><name>master_control.py</name>
+  </compound>
+  <compound refid="obstacle__avoidance_8py" kind="file"><name>obstacle_avoidance.py</name>
+  </compound>
+  <compound refid="teleop__operation_8py" kind="file"><name>teleop_operation.py</name>
+  </compound>
+  <compound refid="dir_53e6fa9553ac22a5646d2a2b2d7b97a1" kind="dir"><name>scripts</name>
+  </compound>
+</doxygenindex>

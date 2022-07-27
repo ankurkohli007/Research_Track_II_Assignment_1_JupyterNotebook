@@ -1,0 +1,153 @@
+\hypertarget{namespaceautonomous__drive}{}\doxysection{autonomous\+\_\+drive Namespace Reference}
+\label{namespaceautonomous__drive}\index{autonomous\_drive@{autonomous\_drive}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceautonomous__drive_adb1a4401abc25d9f39a9c756f0e5ba4e}{refresh\+\_\+variables}} ()
+\item 
+def \mbox{\hyperlink{namespaceautonomous__drive_a02054103f62ea784d400cb4060dff703}{Call\+Back\+\_\+odometry}} (msg)
+\item 
+def \mbox{\hyperlink{namespaceautonomous__drive_a01c053da76775a7077ac3fa02610ab6a}{Call\+Back}} (status, result)
+\item 
+def \mbox{\hyperlink{namespaceautonomous__drive_ad596380351193894e48f76137469503a}{action\+\_\+client\+\_\+set\+\_\+goal}} ()
+\item 
+\mbox{\Hypertarget{namespaceautonomous__drive_a2620136798b5db050411e38994960396}\label{namespaceautonomous__drive_a2620136798b5db050411e38994960396}} 
+def {\bfseries action\+\_\+client\+\_\+init} ()
+\item 
+def \mbox{\hyperlink{namespaceautonomous__drive_a05a14c4ae40dffe61826b28e5461cecd}{Call\+Back\+\_\+reset}} (event)
+\item 
+def \mbox{\hyperlink{namespaceautonomous__drive_a28d8f673172c80c30feab545f47e5972}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceautonomous__drive_a198a2b15e70c2b458d0f647325d8bd3a}\label{namespaceautonomous__drive_a198a2b15e70c2b458d0f647325d8bd3a}} 
+string {\bfseries state} = \char`\"{} \char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceautonomous__drive_abe7bf9a31a43b763f37bddad2457c4d8}\label{namespaceautonomous__drive_abe7bf9a31a43b763f37bddad2457c4d8}} 
+bool {\bfseries goalf} = False
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}.. module:: autonomous_drive
+    :platform: Unix
+    :synopsis: Python module for autonomous_drive mode.
+.. moduleauthor:: Ankur Kohli
+
+Action client:
+    /move_base
+    
+This node is called the autonomous_driving node that allows the robot to reach a specified position provided by user.
+
+Regarding on the input of the user, those inputs will be sent as a goal to the action server /move_base. 
+
+During the movement, the robot sends feedback regarding status of the goal either reached or cancelled with publishers like /move_base/goal or /move_base/cancel respectively. The robot can create a map with help of gmapping. User is also able
+to cancel the goal, and provide a new one. 
+
+Subscribes to:
+ /nav_msgs/odometry topic where the simulator publishes the robot position.
+ 
+Action:
+ MoveBaseAction
+ MoveBaseGoal
+ 
+The Action Client-Service communicate via a "ROS Action Protocol", which is built on top of ROS messages. The client and server then provide a simple API for users to request goals (on the client side) or to execute goals (on the server side) via function calls and callbacks. 
+
+Through out the coding of this node I implemented only the *Actionclient* side of the whole structure using the already existing server of the following action messages:
+
+* ``MoveBaseAction``
+* ``MoveBaseGoal``
+ 
+The Actionlib feature, an ActionServer receives the goal message from an ActionClient. In the case of this assignment, the goal is to move the robot's base position. The goal would be a MoveBaseGoal message that contains information about where the robot should move to in the world. For controlling all the robot positions in space, the goal would contain the *target_pose* parameters (stamp, orientation, target position, etc).\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceautonomous__drive_ad596380351193894e48f76137469503a}\label{namespaceautonomous__drive_ad596380351193894e48f76137469503a}} 
+\index{autonomous\_drive@{autonomous\_drive}!action\_client\_set\_goal@{action\_client\_set\_goal}}
+\index{action\_client\_set\_goal@{action\_client\_set\_goal}!autonomous\_drive@{autonomous\_drive}}
+\doxysubsubsection{\texorpdfstring{action\_client\_set\_goal()}{action\_client\_set\_goal()}}
+{\footnotesize\ttfamily def autonomous\+\_\+drive.\+action\+\_\+client\+\_\+set\+\_\+goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function will set the goal
+
+No Args 
+
+No returns
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceautonomous__drive_a01c053da76775a7077ac3fa02610ab6a}\label{namespaceautonomous__drive_a01c053da76775a7077ac3fa02610ab6a}} 
+\index{autonomous\_drive@{autonomous\_drive}!CallBack@{CallBack}}
+\index{CallBack@{CallBack}!autonomous\_drive@{autonomous\_drive}}
+\doxysubsubsection{\texorpdfstring{CallBack()}{CallBack()}}
+{\footnotesize\ttfamily def autonomous\+\_\+drive.\+Call\+Back (\begin{DoxyParamCaption}\item[{}]{status,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Arguments status and result states that actionlib_goalStatus and MoveBaseResult
+
+Args:
+ status (actionlib_goalStatus): integer code corrisponding to the terminal state.
+ result (MoveBaseResult): result of the goal processing.
+ 
+No Returns
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceautonomous__drive_a02054103f62ea784d400cb4060dff703}\label{namespaceautonomous__drive_a02054103f62ea784d400cb4060dff703}} 
+\index{autonomous\_drive@{autonomous\_drive}!CallBack\_odometry@{CallBack\_odometry}}
+\index{CallBack\_odometry@{CallBack\_odometry}!autonomous\_drive@{autonomous\_drive}}
+\doxysubsubsection{\texorpdfstring{CallBack\_odometry()}{CallBack\_odometry()}}
+{\footnotesize\ttfamily def autonomous\+\_\+drive.\+Call\+Back\+\_\+odometry (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Here, the arguement msg (/odom.msg): this will hold the present position of the robot in
+the enviroment in the terms of x and y
+
+Args:
+ msg (/odom.msg): this variable will contain the current x/y position of the robot in
+ the enviroment.
+ 
+ No Returns
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceautonomous__drive_a05a14c4ae40dffe61826b28e5461cecd}\label{namespaceautonomous__drive_a05a14c4ae40dffe61826b28e5461cecd}} 
+\index{autonomous\_drive@{autonomous\_drive}!CallBack\_reset@{CallBack\_reset}}
+\index{CallBack\_reset@{CallBack\_reset}!autonomous\_drive@{autonomous\_drive}}
+\doxysubsubsection{\texorpdfstring{CallBack\_reset()}{CallBack\_reset()}}
+{\footnotesize\ttfamily def autonomous\+\_\+drive.\+Call\+Back\+\_\+reset (\begin{DoxyParamCaption}\item[{}]{event }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}event is time variable
+
+active_ is the parameter which will set to 0 and this resets whole state of the
+operations
+
+Args:
+ event (float) : for time variable 
+
+No Returns
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceautonomous__drive_a28d8f673172c80c30feab545f47e5972}\label{namespaceautonomous__drive_a28d8f673172c80c30feab545f47e5972}} 
+\index{autonomous\_drive@{autonomous\_drive}!main@{main}}
+\index{main@{main}!autonomous\_drive@{autonomous\_drive}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def autonomous\+\_\+drive.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}In main(), robot's behaviour will constantly supervised. While loop will start spin 
+right away when the CallBack function subscribed and the node is initialized. During the 
+loop execution node will call the last defined functions as per the present state of the 
+robot defined by the user using global parameters variables. Lastly, it will display the 
+excution states as well.
+
+Fetching the values from the Parameter Server. We can also optionally pass in a default 
+value to use if the parameter is not set
+
+No returns
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceautonomous__drive_adb1a4401abc25d9f39a9c756f0e5ba4e}\label{namespaceautonomous__drive_adb1a4401abc25d9f39a9c756f0e5ba4e}} 
+\index{autonomous\_drive@{autonomous\_drive}!refresh\_variables@{refresh\_variables}}
+\index{refresh\_variables@{refresh\_variables}!autonomous\_drive@{autonomous\_drive}}
+\doxysubsubsection{\texorpdfstring{refresh\_variables()}{refresh\_variables()}}
+{\footnotesize\ttfamily def autonomous\+\_\+drive.\+refresh\+\_\+variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}gloabal keyword allows us to modify the variable outside of the current scope. It is 
+used to create a global variable and make   changes to the variable in a local context.
+
+No Args 
+
+No Returns
+\end{DoxyVerb}
+ 

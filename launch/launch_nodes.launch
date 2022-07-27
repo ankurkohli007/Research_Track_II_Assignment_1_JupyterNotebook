@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+<param name="active" type="int" value="0" />
+
+<param name="des_pos_x" type="double" value="1" />
+<param name="des_pos_y" type="double" value="1" />
+
+
+<node pkg="final_assignment" type="master_control.py" name="master_control" required="true" launch-prefix="xterm -fg white -bg black -e " />
+<node pkg="final_assignment" type="autonomous_drive.py" name="autonomous_drive" required="true" launch-prefix="xterm -fg white -bg black -e " />
+<node pkg="final_assignment" type="teleop_operation.py" name="teleop_operation" required="true" launch-prefix="xterm -fg white -bg black -e " /> 
+<node pkg="final_assignment" type="obstacle_avoidance.py" name="obstacle_avoidance" required="true" /> 
+
+</launch>

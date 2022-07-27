@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scripts.master_control &mdash; Software Architecture for Mobile Robot Control 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Software Architecture for Mobile Robot Control
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Software Architecture for Mobile Robot Control</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>scripts.master_control</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for scripts.master_control</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This is a master_control_node which will accepts and reads the user request and change the behaviour of the robot acording to user input.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: master_control</span>
+<span class="sd">    :platform Unix</span>
+<span class="sd">    :synopsis: Python module for managing the robot behaviour</span>
+<span class="sd">.. moduleauthor:: Ankur Kohli</span>
+<span class="sd">This node is used to manage the robot&#39;s operation according to user. With this user interface, </span>
+<span class="sd">the user can choose either autonomous_drive mode, teleop_operation mode and obstacle_avoidance mode. </span>
+<span class="sd">This file is calling specific functions in terminal and receive inputs. </span>
+
+
+<span class="sd">-- Robot&#39;s Behaviour options</span>
+<span class="sd">========================</span>
+
+<span class="sd">* Press 1: Autonomously driving robot to reach at x,y coordinates as per input by the user </span>
+<span class="sd">* Press 2: Teleop operations by the user drive the robot using keyboard</span>
+<span class="sd">* Press 3: Obstacle avoidance operations to drive the robot assisting them (using keyboard) to </span>
+<span class="sd">  avoid collisions </span>
+<span class="sd">* Press 0: Lazy state of robot, in this state robot will shows laziness and do nothing untill</span>
+<span class="sd">  and unless the robots&#39;s behvaiour is chnaged by the user</span>
+<span class="sd">  </span>
+<span class="sd">-- Parameters</span>
+<span class="sd">================</span>
+<span class="sd">The ``launch_nodes.launch`` launch file, is added for *three parameters* to the project for managing the *different robot&#39;s state* of all the nodes involved in the project.</span>
+
+<span class="sd">The three parameters are:</span>
+
+<span class="sd">*Active*: This parameter manages the current state of the project&#39;s ROS node chain. Once the program is launched, the parameter is set to be in *Lazy state of robot* (0 states). In the beginning, one of the nodes will be in its active state. The User interface node is capable of managing the change of the value of this parameter thanks to the retrieved user input. A simple legend will tell the user what button to press for running a certain driving modality. The user input will change the value of the parameter and all the nodes will either keep their current idle state or switch to a running state. An if-else statement inside every node manages this operation to switch.</span>
+
+<span class="sd">*Posion X and Position Y*: Also, these two parameters are retrieved by an input user managed in the User Interface node. Once the user selects the *first operation [1]* the User interface will also ask for an X and Y coordinate. This data represents the position we want the robot to go. If the user wants to stop the robot&#39;s motion, it is sufficient to either input another driving modality or set the project idle state.</span>
+
+<span class="sd">The User interface node will also keep the user updated on the present robot&#39;s operation and the on-screen messages sent at every state switch. Some flags will keep track of the current operation based on the User inputs.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="c1"># importig required libraries</span>
+<span class="kn">from</span> <span class="nn">std_srvs.srv</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+
+
+
+ 
+
+<span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">**Robot&#39;s Behaviour options**</span>
+<span class="s2">#Press 1: Autonomously driving robot to reach at x,y coordinates as per input by the user </span>
+<span class="s2">#Press 2: Teleop operations by the user drive the robot using keyboard</span>
+<span class="s2">#Press 3: Obstacle avoidance operations to drive the robot assisting them (using keyboard) to avoid collisions </span>
+<span class="s2">#Press 0: Lazy state of robot, in this state robot will shows laziness and do nothing untill and unless the robots&#39;s behvaiour is chnaged by the user</span>
+
+<span class="s2">anything else : stop</span>
+
+<span class="s2">q/z : accelerate/decelrate velocity by 10%</span>
+<span class="s2">w/x : accelerate/decelrate only linear velocity by 10%</span>
+<span class="s2">e/c : accelerate/decelrate only angular velocity by 10%</span>
+
+<span class="s2">CTRL-C to quit</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1">#main() is the the point of execution to perform operations</span>
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../index.html#scripts.master_control.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	In main(), user will be asked contantly for the input to change the robot&#39;s behaviour such as autonomously drive mode, teleop</span>
+<span class="sd">	keyboard mode, obstacle avoidance mode, idle mode, and so on. </span>
+<span class="sd">	</span>
+<span class="sd">	No Returns</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	
+	<span class="n">f</span> <span class="o">=</span> <span class="kc">False</span>	<span class="c1"># this will print a goal cancellation message whenever any operation under execution</span>
+	<span class="k">while</span> <span class="ow">not</span> <span class="n">rospy</span><span class="o">.</span><span class="n">is_shutdown</span><span class="p">():</span> 
+		<span class="n">command</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Benvenuti!! Please choose the operation to change robot behaviour&#39;</span><span class="p">))</span>	
+		<span class="c1"># Now checking the option entered by the user to change robot state</span>
+							
+		<span class="c1"># OPERATION 1: AUTONOMOUS DRIVING MODE TO REACH AT X,Y COORDINATES (User&#39;s Desired Position)</span>
+		<span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		
+			<span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+			     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry!! Cancelling the operation&quot;</span><span class="p">)</span>
+			     <span class="n">f</span> <span class="o">=</span> <span class="kc">False</span>
+				
+			<span class="n">rospy</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># resetting robot&#39;s state</span>
+			
+			<span class="c1"># Displaying message for the user to know the actuale state of robot </span>
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Now robot is in operation 1 state, if you want to cancel robot&#39;s behaviour then press &#39;0&#39;!!&quot;</span><span class="p">)</span>
+			<span class="c1"># Now asking the user to input the target position i.e. x,y coordinated where user want to move the robot</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please, enter the target position (x,y coordinates) where you want to send the robot!!&quot;</span><span class="p">)</span>
+			<span class="n">pos_x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please, enter X coordinate:&quot;</span><span class="p">))</span>	<span class="c1"># Displaying message to input x coordinate</span>
+			<span class="n">pos_y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please, enter Y coordinate: &quot;</span><span class="p">))</span>   <span class="c1"># Displaying message to input y coordinate		</span>
+			
+			<span class="c1"># Setting parameter on the Parameter Server</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="s1">&#39;des_pos_x&#39;</span><span class="p">,</span> <span class="n">pos_x</span><span class="p">)</span>	
+			<span class="n">rospy</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="s1">&#39;des_pos_y&#39;</span><span class="p">,</span> <span class="n">pos_y</span><span class="p">)</span>	
+			<span class="n">rospy</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>		
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ROBOT is performing opertion 1&quot;</span><span class="p">)</span>
+			<span class="n">f</span> <span class="o">=</span> <span class="kc">True</span>
+			
+		<span class="c1"># OPERATION 2: OBSTACLE OPERATION TO CHANGE ROBOT&#39;S BEHAVIOUR USING KEYBOARD</span>
+		<span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+		
+
+			<span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+			     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry!! Cancelling the operation&quot;</span><span class="p">)</span>
+			     <span class="n">f</span> <span class="o">=</span> <span class="kc">False</span>
+						
+			<span class="n">rospy</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># Message to know robot&#39;s current state</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Now robot is performing Operation 2&quot;</span><span class="p">)</span>
+			
+				
+		<span class="c1"># OPERATION 3: OBSTACLE OPERATION TO ASSIST ROBOT&#39;S BEHAVIOUR USING KEYBOARD &amp; AVOIDING COLLISION</span>
+		<span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+		
+			<span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+			     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry!! Cancelling the operation&quot;</span><span class="p">)</span>
+			     <span class="n">f</span> <span class="o">=</span> <span class="kc">False</span>
+				
+			<span class="n">rospy</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 	<span class="c1"># Message to know robot&#39;s current state</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Now robot is performing Operation 3&quot;</span><span class="p">)</span>
+				
+		<span class="c1"># OPERATION 4: LAZY STATE, ROBOT WILL NOT PERFORM ANY ACTION</span>
+		<span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			
+			<span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+			     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry!! Cancelling the operation&quot;</span><span class="p">)</span>
+			     <span class="n">f</span> <span class="o">=</span> <span class="kc">False</span>
+				
+			<span class="n">rospy</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>   <span class="c1"># Message to know robot&#39;s current state</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Now robot is performing Operation 4&quot;</span><span class="p">)</span>	<span class="c1"># Printing the actual state.</span>
+				
+		<span class="k">else</span><span class="p">:</span>
+			
+			<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry!! Invalid input!! Please choose the coorect option to perform robot operations!&quot;</span><span class="p">)</span></div>
+
+<span class="c1"># this is used to execute some code only if the file was run directly, and not imported.</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+	<span class="n">main</span><span class="p">()</span>
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ankur Kohli.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

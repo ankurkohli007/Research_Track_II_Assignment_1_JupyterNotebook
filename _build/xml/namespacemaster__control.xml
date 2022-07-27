@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacemaster__control" kind="namespace" language="Python">
+    <compoundname>master_control</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacemaster__control_1ae19c95da260924a1f1e21af75981a361" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string master_control.msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <initializer>=  &quot;&quot;&quot;
+**Robot&apos;s Behaviour options**
+#Press 1: Autonomously driving robot to reach at x,y coordinates as per input by the user 
+#Press 2: Teleop operations by the user drive the robot using keyboard
+#Press 3: Obstacle avoidance operations to drive the robot assisting them (using keyboard) to avoid collisions 
+#Press 0: Lazy state of robot, in this state robot will shows laziness and do nothing untill and unless the robots&apos;s behvaiour is chnaged by the user
+
+anything else : stop
+
+q/z : accelerate/decelrate velocity by 10%
+w/x : accelerate/decelrate only linear velocity by 10%
+e/c : accelerate/decelrate only angular velocity by 10%
+
+CTRL-C to quit
+&quot;&quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/master_control.py" line="52" column="1" bodyfile="scripts/master_control.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemaster__control_1a3738cbe9b8cb8bab7a46877625a1b574" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def master_control.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>In main(), user will be asked contantly for the input to change the robot&apos;s behaviour such as autonomously drive mode, teleop
+keyboard mode, obstacle avoidance mode, idle mode, and so on. 
+
+No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/master_control.py" line="69" column="1" bodyfile="scripts/master_control.py" bodystart="69" bodyend="141"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>This is a master_control_node which will accepts and reads the user request and change the behaviour of the robot acording to user input.
+</verbatim> </para>
+    </detaileddescription>
+    <location file="scripts/master_control.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

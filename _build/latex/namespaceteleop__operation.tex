@@ -1,0 +1,254 @@
+\hypertarget{namespaceteleop__operation}{}\doxysection{teleop\+\_\+operation Namespace Reference}
+\label{namespaceteleop__operation}\index{teleop\_operation@{teleop\_operation}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classteleop__operation_1_1_publish_thread}{Publish\+Thread}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a66051e67ee7305183e00fe4a329390f5}\label{namespaceteleop__operation_a66051e67ee7305183e00fe4a329390f5}} 
+def {\bfseries get\+Key} (key\+\_\+timeout)
+\item 
+def \mbox{\hyperlink{namespaceteleop__operation_a96bc55bb6ee915dd5b84db329179caba}{Call\+Back\+\_\+avoidance}} (msg)
+\item 
+def \mbox{\hyperlink{namespaceteleop__operation_aeff5576db385051affabb05219de3ca3}{new\+\_\+command}} (dictionary)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a501c7f901bbea1f518b427bd4ec57ac0}\label{namespaceteleop__operation_a501c7f901bbea1f518b427bd4ec57ac0}} 
+def {\bfseries vels} (speed, turn)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries msg}
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a25459407643eccbad423c1e033037f6f}\label{namespaceteleop__operation_a25459407643eccbad423c1e033037f6f}} 
+bool {\bfseries l} = True
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a998e8732e0776d04560dbe86ca6a6dfb}\label{namespaceteleop__operation_a998e8732e0776d04560dbe86ca6a6dfb}} 
+bool {\bfseries r} = True
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_aeac98c7804d50e9fe48e659ad8e8579d}\label{namespaceteleop__operation_aeac98c7804d50e9fe48e659ad8e8579d}} 
+bool {\bfseries f} = True
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_ada8db3fe389ca35db358375697a3ae77}\label{namespaceteleop__operation_ada8db3fe389ca35db358375697a3ae77}} 
+bool {\bfseries fl} = True
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a9c69cf192d025c984009320a335414fa}\label{namespaceteleop__operation_a9c69cf192d025c984009320a335414fa}} 
+bool {\bfseries fr} = True
+\item 
+dictionary {\bfseries move\+Bindings}
+\item 
+dictionary {\bfseries speed\+Bindings}
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_afaa894c082f7e3b52df863dda34def22}\label{namespaceteleop__operation_afaa894c082f7e3b52df863dda34def22}} 
+{\bfseries active\+\_\+} = rospy.\+get\+\_\+param(\char`\"{}/active\char`\"{})
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_af5fab2b3a052afdac39211be0fdfb911}\label{namespaceteleop__operation_af5fab2b3a052afdac39211be0fdfb911}} 
+bool {\bfseries f1} = True
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a020204790f87623c5e14f76b01637059}\label{namespaceteleop__operation_a020204790f87623c5e14f76b01637059}} 
+bool {\bfseries f2} = False
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a265b40e4060ebb80f2c736526774c822}\label{namespaceteleop__operation_a265b40e4060ebb80f2c736526774c822}} 
+{\bfseries settings} = termios.\+tcgetattr(sys.\+stdin)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_ad8cfa722d01039f770748f1b4db1c9b5}\label{namespaceteleop__operation_ad8cfa722d01039f770748f1b4db1c9b5}} 
+{\bfseries speed} = rospy.\+get\+\_\+param(\char`\"{}$\sim$speed\char`\"{}, 0.\+5)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a46a99f5eda19dfe9580fdb5daf11c825}\label{namespaceteleop__operation_a46a99f5eda19dfe9580fdb5daf11c825}} 
+{\bfseries turn} = rospy.\+get\+\_\+param(\char`\"{}$\sim$turn\char`\"{}, 1.\+0)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_aaf4aff1db14beb5cef518407fbf093b8}\label{namespaceteleop__operation_aaf4aff1db14beb5cef518407fbf093b8}} 
+{\bfseries repeat} = rospy.\+get\+\_\+param(\char`\"{}$\sim$repeat\+\_\+rate\char`\"{}, 0.\+0)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_ae9534fbb923b4d7cbb384d779f62bec8}\label{namespaceteleop__operation_ae9534fbb923b4d7cbb384d779f62bec8}} 
+{\bfseries key\+\_\+timeout} = rospy.\+get\+\_\+param(\char`\"{}$\sim$key\+\_\+timeout\char`\"{}, 0.\+1)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_adcc8aca2c9e9b0e7ad08b229c047d3aa}\label{namespaceteleop__operation_adcc8aca2c9e9b0e7ad08b229c047d3aa}} 
+{\bfseries pub\+\_\+thread} = \mbox{\hyperlink{classteleop__operation_1_1_publish_thread}{Publish\+Thread}}(repeat)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a242fef25d7c6bc747881a3ebdb82fdb3}\label{namespaceteleop__operation_a242fef25d7c6bc747881a3ebdb82fdb3}} 
+int {\bfseries x} = 0
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a4e0484356f5b728d81f25e22b0d6f910}\label{namespaceteleop__operation_a4e0484356f5b728d81f25e22b0d6f910}} 
+int {\bfseries y} = 0
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_abc5df5e4a49d57466e54eaf6a309ff2f}\label{namespaceteleop__operation_abc5df5e4a49d57466e54eaf6a309ff2f}} 
+int {\bfseries z} = 0
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a983a9f83a84f0ebf895faf586265f669}\label{namespaceteleop__operation_a983a9f83a84f0ebf895faf586265f669}} 
+int {\bfseries th} = 0
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a46e6fbab95e9e7f6b51426fdc1cc4ae8}\label{namespaceteleop__operation_a46e6fbab95e9e7f6b51426fdc1cc4ae8}} 
+int {\bfseries status} = 0
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a9ceed5bebdf8ca8a2a36672f9fb54a71}\label{namespaceteleop__operation_a9ceed5bebdf8ca8a2a36672f9fb54a71}} 
+{\bfseries rate} = rospy.\+Rate(5)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a6bd51e59258c03a9de31b5a4bf5fe62a}\label{namespaceteleop__operation_a6bd51e59258c03a9de31b5a4bf5fe62a}} 
+dictionary {\bfseries move\+Bindings\+\_\+temp} = \{\}
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_aa7527156ad9cc21cf9f222cf6384bf45}\label{namespaceteleop__operation_aa7527156ad9cc21cf9f222cf6384bf45}} 
+def {\bfseries key} = get\+Key(key\+\_\+timeout)
+\item 
+\mbox{\Hypertarget{namespaceteleop__operation_a08d0fc9260fc367a6166bb0b27ad08a3}\label{namespaceteleop__operation_a08d0fc9260fc367a6166bb0b27ad08a3}} 
+int {\bfseries flag} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}.. module:: teleop_operation
+:platform: Unix
+:synopsis: Python module for the teleop operation
+.. moduleauthor:: Ankur Kohli
+
+This node allows to use the robot in manual mode. The robot can be controlled with keyboards.
+BY receiving the inputs, the robot moves forward/backward, right/left. 
+
+
+Publishes to:
+ /cmd_vel
+ 
+The script is based on the standard ROS `teleop_twist_keyboard.py <http://wiki.ros.org/teleop_twist_keyboard>`.
+
+This node is constantly checking which keys are pressed on a PC keyboard and based on the pressed keys, publishes twist messages on the ``/cmd_vel`` topic. Twist message defines what should be the linear and rotational speeds of a mobile robot.
+
+Some functions and changes were made to the code to merge it with the `avoidence.py` publisher and to manage the alternity of the activation state.
+
+Just like all the other programs, I had to manage the alternity of the *idle* to the *active* state through the use of an if-statement. Since the node also includes the functionalities of the third modality, the statement will set the node to an active modality if the ``active`` param is either set to 3 or 2.
+
+A new function named ``stop_motion`` to the ``PublishThread`` class. This function will make the robot stop once the driving modality gets switched. The function will set the linear and angular velocity to 0 with the `twist` message through the ``/cmd_vel`` topic.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceteleop__operation_a96bc55bb6ee915dd5b84db329179caba}\label{namespaceteleop__operation_a96bc55bb6ee915dd5b84db329179caba}} 
+\index{teleop\_operation@{teleop\_operation}!CallBack\_avoidance@{CallBack\_avoidance}}
+\index{CallBack\_avoidance@{CallBack\_avoidance}!teleop\_operation@{teleop\_operation}}
+\doxysubsubsection{\texorpdfstring{CallBack\_avoidance()}{CallBack\_avoidance()}}
+{\footnotesize\ttfamily def teleop\+\_\+operation.\+Call\+Back\+\_\+avoidance (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The node which is subscribes to the custom topic "custom_controller" implemented for publishing the "Avoidingwall.msg" message which 
+contains the info about the walls surrounding the robot. 
+
+The CallBack will subscribed and sets some local variables which is equal to the published fields of the custom messages. 
+
+This will use such variables function to change some inputs from the keyboards and also to prevent the user to drive the robot into 
+walls.
+
+gloabal keyword allows us to modify the variable outside of the current scope. It is used to create a global variable and make 
+changes to the variable in a local context.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceteleop__operation_aeff5576db385051affabb05219de3ca3}\label{namespaceteleop__operation_aeff5576db385051affabb05219de3ca3}} 
+\index{teleop\_operation@{teleop\_operation}!new\_command@{new\_command}}
+\index{new\_command@{new\_command}!teleop\_operation@{teleop\_operation}}
+\doxysubsubsection{\texorpdfstring{new\_command()}{new\_command()}}
+{\footnotesize\ttfamily def teleop\+\_\+operation.\+new\+\_\+command (\begin{DoxyParamCaption}\item[{}]{dictionary }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function will going to use pop command and this pop command will remove some keys from the commands right away. 
+
+This removal will inccurs as per the values received by the last callback function to the "\custom_controller" topic. 
+
+These recieved values from the teleop node are relocated in the local variables such as
+
+r:
+      1 = the wall is not close to the right of the robot. The user will be able to turn right. 
+      0 = the wall is close to the right of the robot. The user will not be able to turn right.
+
+l:
+      1 = the wall is not close to the left of the robot. The user will be able to turn left. 
+      0 = the wall is close to the left of the robot. The user will not be able to turn left.
+
+f:
+      1 = the wall is not close to the front of the robot. The user will be able to drive straight. 
+      0 = the wall is close to the front of the robot. The user will not be able to drive straight.
+      
+fr:
+      1 = the wall is not close to the fron-right of the robot. The user will be able to turn front-right. 
+      0 = the wall is close to the front-right of the robot. The user will not be able to turn front-right.
+
+fl:
+      1 = the wall is not close to the front-left of the robot. The user will be able to turn front-left. 
+      0 = the wall is close to the front-left of the robot. The user will not be able to turn front-left.   \end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceteleop__operation_a3aa651b8b1ec1e55f4aad79d04536c04}\label{namespaceteleop__operation_a3aa651b8b1ec1e55f4aad79d04536c04}} 
+\index{teleop\_operation@{teleop\_operation}!moveBindings@{moveBindings}}
+\index{moveBindings@{moveBindings}!teleop\_operation@{teleop\_operation}}
+\doxysubsubsection{\texorpdfstring{moveBindings}{moveBindings}}
+{\footnotesize\ttfamily dictionary teleop\+\_\+operation.\+move\+Bindings}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{}
+\DoxyCodeLine{2         \textcolor{stringliteral}{'i'}:(1,0,0,0),}
+\DoxyCodeLine{3         \textcolor{stringliteral}{'o'}:(1,0,0,-\/1),}
+\DoxyCodeLine{4         \textcolor{stringliteral}{'j'}:(0,0,0,1),}
+\DoxyCodeLine{5         \textcolor{stringliteral}{'l'}:(0,0,0,-\/1),}
+\DoxyCodeLine{6         \textcolor{stringliteral}{'u'}:(1,0,0,1),}
+\DoxyCodeLine{7         \textcolor{stringliteral}{'k'}:(-\/1,0,0,0),}
+\DoxyCodeLine{8         \textcolor{stringliteral}{'.'}:(-\/1,0,0,1),}
+\DoxyCodeLine{9         \textcolor{stringliteral}{'m'}:(-\/1,0,0,-\/1),}
+\DoxyCodeLine{10         \textcolor{stringliteral}{'O'}:(1,-\/1,0,0),}
+\DoxyCodeLine{11         \textcolor{stringliteral}{'I'}:(1,0,0,0),}
+\DoxyCodeLine{12         \textcolor{stringliteral}{'J'}:(0,1,0,0),}
+\DoxyCodeLine{13         \textcolor{stringliteral}{'L'}:(0,-\/1,0,0),}
+\DoxyCodeLine{14         \textcolor{stringliteral}{'U'}:(1,1,0,0),}
+\DoxyCodeLine{15         \textcolor{stringliteral}{'K'}:(-\/1,0,0,0),}
+\DoxyCodeLine{16         \textcolor{stringliteral}{'>'}:(-\/1,-\/1,0,0),}
+\DoxyCodeLine{17         \textcolor{stringliteral}{'M'}:(-\/1,1,0,0),}
+\DoxyCodeLine{18         \textcolor{stringliteral}{'t'}:(0,0,1,0),}
+\DoxyCodeLine{19         \textcolor{stringliteral}{'b'}:(0,0,-\/1,0),}
+\DoxyCodeLine{20     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceteleop__operation_ae455bcc4a2ce8f8494b903b5f6fb7af9}\label{namespaceteleop__operation_ae455bcc4a2ce8f8494b903b5f6fb7af9}} 
+\index{teleop\_operation@{teleop\_operation}!msg@{msg}}
+\index{msg@{msg}!teleop\_operation@{teleop\_operation}}
+\doxysubsubsection{\texorpdfstring{msg}{msg}}
+{\footnotesize\ttfamily string teleop\+\_\+operation.\+msg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{2 \textcolor{stringliteral}{This node makes the robot move using keynoard and this will publish to twist.}}
+\DoxyCodeLine{3 \textcolor{stringliteral}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{stringliteral}{Moving around:}}
+\DoxyCodeLine{5 \textcolor{stringliteral}{           k   }}
+\DoxyCodeLine{6 \textcolor{stringliteral}{      j    i    l }}
+\DoxyCodeLine{7 \textcolor{stringliteral}{}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{For Holonomic mode (strafing), hold down the shift key:}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{           K    }}
+\DoxyCodeLine{11 \textcolor{stringliteral}{      U    I    L}}
+\DoxyCodeLine{12 \textcolor{stringliteral}{anything else : stop}}
+\DoxyCodeLine{13 \textcolor{stringliteral}{}}
+\DoxyCodeLine{14 \textcolor{stringliteral}{q/z : accelerate/decelrate velocity by 10\%}}
+\DoxyCodeLine{15 \textcolor{stringliteral}{w/x : accelerate/decelrate only linear velocity by 10\%}}
+\DoxyCodeLine{16 \textcolor{stringliteral}{e/c : accelerate/decelrate only angular velocity by 10\%}}
+\DoxyCodeLine{17 \textcolor{stringliteral}{}}
+\DoxyCodeLine{18 \textcolor{stringliteral}{CTRL-\/C to quit}}
+\DoxyCodeLine{19 \textcolor{stringliteral}{"""}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceteleop__operation_ab93ac42c9e229876ddd1070c0233b096}\label{namespaceteleop__operation_ab93ac42c9e229876ddd1070c0233b096}} 
+\index{teleop\_operation@{teleop\_operation}!speedBindings@{speedBindings}}
+\index{speedBindings@{speedBindings}!teleop\_operation@{teleop\_operation}}
+\doxysubsubsection{\texorpdfstring{speedBindings}{speedBindings}}
+{\footnotesize\ttfamily dictionary teleop\+\_\+operation.\+speed\+Bindings}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 = \{}
+\DoxyCodeLine{2         \textcolor{stringliteral}{'q'}:(1.1,1.1),}
+\DoxyCodeLine{3         \textcolor{stringliteral}{'z'}:(.9,.9),}
+\DoxyCodeLine{4         \textcolor{stringliteral}{'w'}:(1.1,1),}
+\DoxyCodeLine{5         \textcolor{stringliteral}{'x'}:(.9,1),}
+\DoxyCodeLine{6         \textcolor{stringliteral}{'e'}:(1,1.1),}
+\DoxyCodeLine{7         \textcolor{stringliteral}{'c'}:(1,.9),}
+\DoxyCodeLine{8     \}}
+
+\end{DoxyCode}

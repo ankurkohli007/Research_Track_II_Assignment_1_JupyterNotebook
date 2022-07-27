@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceobstacle__avoidance" kind="namespace" language="Python">
+    <compoundname>obstacle_avoidance</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceobstacle__avoidance_1aa6f0567a135b817b6a97810726fc85b3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool obstacle_avoidance.l</definition>
+        <argsstring></argsstring>
+        <name>l</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/obstacle_avoidance.py" line="34" column="1" bodyfile="scripts/obstacle_avoidance.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceobstacle__avoidance_1aed79823ada0b07b0b1c06b07b5f2c2ec" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool obstacle_avoidance.r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/obstacle_avoidance.py" line="35" column="1" bodyfile="scripts/obstacle_avoidance.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceobstacle__avoidance_1abfdac0b8cf8ae8ff684741bb157cc31d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool obstacle_avoidance.f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/obstacle_avoidance.py" line="36" column="1" bodyfile="scripts/obstacle_avoidance.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceobstacle__avoidance_1a115117af45534a6af5a311180ef4e796" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def obstacle_avoidance.CallBack_avoid</definition>
+        <argsstring>(msg)</argsstring>
+        <name>CallBack_avoid</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> In this function, data will be obtain and manage accordingly from the /laser_scan. When 
+ this CallBack function receives the laser scan values in terms of ranges[] which is an 
+ array, and these ranges are categorized to perform it&apos;s operations. 
+
+ From 0 to 143: which represents the right side of the scanned area.
+ From 144 to 287: which represents the front right side of the scanned area.
+ From 288 to 431: which represents the front side of the scanned area.
+ From 432 to 575: which represents the front left side of the scanned area.
+ From 576 to 719: which represents the left side of the scanned area.
+
+ gloabal keyword allows us to modify the variable outside of the current scope. It is 
+ used to create a global variable and make changes to the variable in a local context.
+ 
+ Args:
+ msg (sensor_messages/LaserScan.msg): contains `ranges` array which provides the 
+ distances of each laser with respect to the objects in the enviroment.
+ 
+No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/obstacle_avoidance.py" line="42" column="1" bodyfile="scripts/obstacle_avoidance.py" bodystart="42" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceobstacle__avoidance_1a8201cd0fe8f999f092ce132a7a2c833e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def obstacle_avoidance.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Firstly, we will declare the definition of the subscriber CallBack and the pubblisher. 
+Three pub_msg will be assigned to ok_ for local variables and it will constantly 
+pubblished with a rate of 10 hz rate to the custom topic custom_controller.
+
+No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/obstacle_avoidance.py" line="104" column="1" bodyfile="scripts/obstacle_avoidance.py" bodystart="104" bodyend="138"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: obstacle_avoidance
+:platform: Unix
+:synopsis: Python module for the obstacle avoidance
+.. moduleauthor:: Ankur Kohli
+
+This mode allows to use the robot in manual mode. The robot can be controlled with keyboards.
+By receiving the inputs, the robot moves forward/backward, right/left. However, this mode tells
+about the distance to the obtacles. Using the /scan to detect the walls around the robot.
+
+Subscribes to:
+ /laser_scan
+ 
+Publishes to:
+ /avoid
+ 
+This node aims to activate a security feature for driving with the teleop_key modality. The *subscription* to the ``/laser_scan`` topic, the node will be able to get info about the robot&apos;s surroundings. The subscription to the topic will give back the ``ranges[0,720]`` array to the subscribed callback. This data structure contains the distance values between the robot and the surrounding walls for a span of 180º degrees in front of the robot. The array simulates the info that a set of lasers would retrieve in an actual environment.
+
+The node will later elaborate the data acquired to publish it on the ``custom_controller`` custom topic through the ``Avoid.msg`` custom message.</verbatim> </para>
+    </detaileddescription>
+    <location file="scripts/obstacle_avoidance.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

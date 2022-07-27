@@ -1,0 +1,59 @@
+\hypertarget{namespacemaster__control}{}\doxysection{master\+\_\+control Namespace Reference}
+\label{namespacemaster__control}\index{master\_control@{master\_control}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemaster__control_a3738cbe9b8cb8bab7a46877625a1b574}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries msg}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This is a master_control_node which will accepts and reads the user request and change the behaviour of the robot acording to user input.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemaster__control_a3738cbe9b8cb8bab7a46877625a1b574}\label{namespacemaster__control_a3738cbe9b8cb8bab7a46877625a1b574}} 
+\index{master\_control@{master\_control}!main@{main}}
+\index{main@{main}!master\_control@{master\_control}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def master\+\_\+control.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}In main(), user will be asked contantly for the input to change the robot's behaviour such as autonomously drive mode, teleop
+keyboard mode, obstacle avoidance mode, idle mode, and so on. 
+
+No Returns
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemaster__control_ae19c95da260924a1f1e21af75981a361}\label{namespacemaster__control_ae19c95da260924a1f1e21af75981a361}} 
+\index{master\_control@{master\_control}!msg@{msg}}
+\index{msg@{msg}!master\_control@{master\_control}}
+\doxysubsubsection{\texorpdfstring{msg}{msg}}
+{\footnotesize\ttfamily string master\+\_\+control.\+msg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \textcolor{stringliteral}{"""}}
+\DoxyCodeLine{2 \textcolor{stringliteral}{**Robot's Behaviour options**}}
+\DoxyCodeLine{3 \textcolor{stringliteral}{\#Press 1: Autonomously driving robot to reach at x,y coordinates as per input by the user }}
+\DoxyCodeLine{4 \textcolor{stringliteral}{\#Press 2: Teleop operations by the user drive the robot using keyboard}}
+\DoxyCodeLine{5 \textcolor{stringliteral}{\#Press 3: Obstacle avoidance operations to drive the robot assisting them (using keyboard) to avoid collisions }}
+\DoxyCodeLine{6 \textcolor{stringliteral}{\#Press 0: Lazy state of robot, in this state robot will shows laziness and do nothing untill and unless the robots's behvaiour is chnaged by the user}}
+\DoxyCodeLine{7 \textcolor{stringliteral}{}}
+\DoxyCodeLine{8 \textcolor{stringliteral}{anything else : stop}}
+\DoxyCodeLine{9 \textcolor{stringliteral}{}}
+\DoxyCodeLine{10 \textcolor{stringliteral}{q/z : accelerate/decelrate velocity by 10\%}}
+\DoxyCodeLine{11 \textcolor{stringliteral}{w/x : accelerate/decelrate only linear velocity by 10\%}}
+\DoxyCodeLine{12 \textcolor{stringliteral}{e/c : accelerate/decelrate only angular velocity by 10\%}}
+\DoxyCodeLine{13 \textcolor{stringliteral}{}}
+\DoxyCodeLine{14 \textcolor{stringliteral}{CTRL-\/C to quit}}
+\DoxyCodeLine{15 \textcolor{stringliteral}{"""}}
+
+\end{DoxyCode}

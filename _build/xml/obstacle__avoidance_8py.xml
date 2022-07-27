@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="obstacle__avoidance_8py" kind="file" language="Python">
+    <compoundname>obstacle_avoidance.py</compoundname>
+    <innernamespace refid="namespaceobstacle__avoidance">obstacle_avoidance</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespaceobstacle__avoidance" refkind="compound"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">..<sp/>module::<sp/>obstacle_avoidance</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:platform:<sp/>Unix</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:synopsis:<sp/>Python<sp/>module<sp/>for<sp/>the<sp/>obstacle<sp/>avoidance</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">..<sp/>moduleauthor::<sp/>Ankur<sp/>Kohli</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">This<sp/>mode<sp/>allows<sp/>to<sp/>use<sp/>the<sp/>robot<sp/>in<sp/>manual<sp/>mode.<sp/>The<sp/>robot<sp/>can<sp/>be<sp/>controlled<sp/>with<sp/>keyboards.</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">By<sp/>receiving<sp/>the<sp/>inputs,<sp/>the<sp/>robot<sp/>moves<sp/>forward/backward,<sp/>right/left.<sp/>However,<sp/>this<sp/>mode<sp/>tells</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">about<sp/>the<sp/>distance<sp/>to<sp/>the<sp/>obtacles.<sp/>Using<sp/>the<sp/>/scan<sp/>to<sp/>detect<sp/>the<sp/>walls<sp/>around<sp/>the<sp/>robot.</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">Subscribes<sp/>to:</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"><sp/>/laser_scan</highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral">Publishes<sp/>to:</highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"><sp/>/avoid</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral">This<sp/>node<sp/>aims<sp/>to<sp/>activate<sp/>a<sp/>security<sp/>feature<sp/>for<sp/>driving<sp/>with<sp/>the<sp/>teleop_key<sp/>modality.<sp/>The<sp/>*subscription*<sp/>to<sp/>the<sp/>``/laser_scan``<sp/>topic,<sp/>the<sp/>node<sp/>will<sp/>be<sp/>able<sp/>to<sp/>get<sp/>info<sp/>about<sp/>the<sp/>robot&apos;s<sp/>surroundings.<sp/>The<sp/>subscription<sp/>to<sp/>the<sp/>topic<sp/>will<sp/>give<sp/>back<sp/>the<sp/>``ranges[0,720]``<sp/>array<sp/>to<sp/>the<sp/>subscribed<sp/>callback.<sp/>This<sp/>data<sp/>structure<sp/>contains<sp/>the<sp/>distance<sp/>values<sp/>between<sp/>the<sp/>robot<sp/>and<sp/>the<sp/>surrounding<sp/>walls<sp/>for<sp/>a<sp/>span<sp/>of<sp/>180º<sp/>degrees<sp/>in<sp/>front<sp/>of<sp/>the<sp/>robot.<sp/>The<sp/>array<sp/>simulates<sp/>the<sp/>info<sp/>that<sp/>a<sp/>set<sp/>of<sp/>lasers<sp/>would<sp/>retrieve<sp/>in<sp/>an<sp/>actual<sp/>environment.</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral">The<sp/>node<sp/>will<sp/>later<sp/>elaborate<sp/>the<sp/>data<sp/>acquired<sp/>to<sp/>publish<sp/>it<sp/>on<sp/>the<sp/>``custom_controller``<sp/>custom<sp/>topic<sp/>through<sp/>the<sp/>``Avoid.msg``<sp/>custom<sp/>message.</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">#<sp/>imorting<sp/>required<sp/>libraries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>sensor_msgs.msg<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>LaserScan</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>final_assignment.msg<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Avoid<sp/></highlight><highlight class="comment">#custom<sp/>import</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">l<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">#<sp/>determines<sp/>the<sp/>appearance<sp/>of<sp/>a<sp/>wall<sp/>at<sp/>the<sp/>left<sp/>side<sp/>of<sp/>robot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">r<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">#<sp/>determines<sp/>the<sp/>appearance<sp/>of<sp/>a<sp/>wall<sp/>at<sp/>the<sp/>right<sp/>side<sp/>of<sp/>robot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">f<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">#<sp/>determines<sp/>the<sp/>appearance<sp/>of<sp/>a<sp/>wall<sp/>at<sp/>the<sp/>front<sp/>side<sp/>of<sp/>robot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral">CallBack<sp/>function<sp/>is<sp/>declared<sp/>and<sp/>it<sp/>is<sp/>used<sp/>to<sp/>check<sp/>the<sp/>presence<sp/>of<sp/>the<sp/>wall<sp/>which<sp/>is<sp/>close<sp/>to<sp/>the<sp/>robot<sp/>and<sp/>what<sp/>is<sp/>the<sp/>wall<sp/>direction.</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespaceobstacle__avoidance_1a115117af45534a6af5a311180ef4e796" kindref="member">CallBack_avoid</ref>(msg):</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>In<sp/>this<sp/>function,<sp/>data<sp/>will<sp/>be<sp/>obtain<sp/>and<sp/>manage<sp/>accordingly<sp/>from<sp/>the<sp/>/laser_scan.<sp/>When<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>this<sp/>CallBack<sp/>function<sp/>receives<sp/>the<sp/>laser<sp/>scan<sp/>values<sp/>in<sp/>terms<sp/>of<sp/>ranges[]<sp/>which<sp/>is<sp/>an<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>array,<sp/>and<sp/>these<sp/>ranges<sp/>are<sp/>categorized<sp/>to<sp/>perform<sp/>it&apos;s<sp/>operations.<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>From<sp/>0<sp/>to<sp/>143:<sp/>which<sp/>represents<sp/>the<sp/>right<sp/>side<sp/>of<sp/>the<sp/>scanned<sp/>area.</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>From<sp/>144<sp/>to<sp/>287:<sp/>which<sp/>represents<sp/>the<sp/>front<sp/>right<sp/>side<sp/>of<sp/>the<sp/>scanned<sp/>area.</highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>From<sp/>288<sp/>to<sp/>431:<sp/>which<sp/>represents<sp/>the<sp/>front<sp/>side<sp/>of<sp/>the<sp/>scanned<sp/>area.</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>From<sp/>432<sp/>to<sp/>575:<sp/>which<sp/>represents<sp/>the<sp/>front<sp/>left<sp/>side<sp/>of<sp/>the<sp/>scanned<sp/>area.</highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>From<sp/>576<sp/>to<sp/>719:<sp/>which<sp/>represents<sp/>the<sp/>left<sp/>side<sp/>of<sp/>the<sp/>scanned<sp/>area.</highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>gloabal<sp/>keyword<sp/>allows<sp/>us<sp/>to<sp/>modify<sp/>the<sp/>variable<sp/>outside<sp/>of<sp/>the<sp/>current<sp/>scope.<sp/>It<sp/>is<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>used<sp/>to<sp/>create<sp/>a<sp/>global<sp/>variable<sp/>and<sp/>make<sp/>changes<sp/>to<sp/>the<sp/>variable<sp/>in<sp/>a<sp/>local<sp/>context.</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>msg<sp/>(sensor_messages/LaserScan.msg):<sp/>contains<sp/>`ranges`<sp/>array<sp/>which<sp/>provides<sp/>the<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>distances<sp/>of<sp/>each<sp/>laser<sp/>with<sp/>respect<sp/>to<sp/>the<sp/>objects<sp/>in<sp/>the<sp/>enviroment.</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>No<sp/>Returns</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>l</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>r</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>f</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>active_=rospy.get_param(</highlight><highlight class="stringliteral">&quot;/active&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="comment">#<sp/>Active<sp/>parameters<sp/>value<sp/>is<sp/>assigned<sp/>to<sp/>the<sp/>local<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>active_<sp/>==<sp/>3:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>right<sp/>=<sp/>min(msg.ranges[0:143])<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>right<sp/>checking<sp/>laser<sp/>span.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>front<sp/>=<sp/>min(msg.ranges[288:431])<sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>front<sp/>checking<sp/>laser<sp/>span.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>left<sp/>=<sp/>min(msg.ranges[576:719])<sp/></highlight><highlight class="comment">#<sp/>left<sp/>checking<sp/>laser<sp/>span.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>robot<sp/>is<sp/>close<sp/>to<sp/>right<sp/>wall.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>right<sp/>&lt;<sp/>1.0:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>robot<sp/>is<sp/>close<sp/>to<sp/>front<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>front<sp/>&lt;<sp/>1.0:</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>robot<sp/>is<sp/>close<sp/>to<sp/>left<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>left<sp/>&lt;<sp/>1.0:</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#If<sp/>all<sp/>the<sp/>conditions<sp/>are<sp/>okay<sp/>than<sp/>Operation<sp/>3<sp/>&quot;Obstacle<sp/>avoidance<sp/>operations<sp/>to<sp/>drive<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#the<sp/>robot<sp/>assisting<sp/>them<sp/>(using<sp/>keyboard)<sp/>to<sp/>avoid<sp/>collisions&quot;<sp/>is<sp/>stopped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:<sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">#<sp/>main()<sp/>is<sp/>the<sp/>the<sp/>point<sp/>of<sp/>execution<sp/>to<sp/>perform<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespaceobstacle__avoidance_1a8201cd0fe8f999f092ce132a7a2c833e" kindref="member">main</ref>():</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="106"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Firstly,<sp/>we<sp/>will<sp/>declare<sp/>the<sp/>definition<sp/>of<sp/>the<sp/>subscriber<sp/>CallBack<sp/>and<sp/>the<sp/>pubblisher.<sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Three<sp/>pub_msg<sp/>will<sp/>be<sp/>assigned<sp/>to<sp/>ok_<sp/>for<sp/>local<sp/>variables<sp/>and<sp/>it<sp/>will<sp/>constantly<sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>pubblished<sp/>with<sp/>a<sp/>rate<sp/>of<sp/>10<sp/>hz<sp/>rate<sp/>to<sp/>the<sp/>custom<sp/>topic<sp/>custom_controller.</highlight></codeline>
+<codeline lineno="109"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>No<sp/>Returns</highlight></codeline>
+<codeline lineno="111"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>l</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>r</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>f</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Publishing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>pub<sp/>=<sp/>rospy.Publisher(</highlight><highlight class="stringliteral">&apos;custom_controller&apos;</highlight><highlight class="normal">,<sp/>Avoid,<sp/>queue_size<sp/>=<sp/>10)<sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.init_node(</highlight><highlight class="stringliteral">&apos;avoidence&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="comment">#<sp/>node<sp/>is<sp/>initialized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>sub<sp/>=<sp/>rospy.Subscriber(</highlight><highlight class="stringliteral">&apos;/scan&apos;</highlight><highlight class="normal">,<sp/>LaserScan,<sp/>CallBack_avoid)<sp/></highlight><highlight class="comment">#<sp/>/scan<sp/>topic<sp/>is<sp/>subscribed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>rate<sp/>=<sp/>rospy.Rate(5)<sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>pub_msg<sp/>=<sp/>Avoid()<sp/></highlight><highlight class="comment">#<sp/>custom<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>The<sp/>most<sp/>common<sp/>usage<sp/>patterns<sp/>for<sp/>testing<sp/>for<sp/>shutdown<sp/>in<sp/>rospy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>rospy.is_shutdown():</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pub_msg.left<sp/>=<sp/>l<sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>custom<sp/>message<sp/>field<sp/>is<sp/>assigned<sp/>for<sp/>left<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pub_msg.right<sp/>=<sp/>r<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>custom<sp/>message<sp/>field<sp/>is<sp/>assigned<sp/>for<sp/>right<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pub_msg.front<sp/>=<sp/>f<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>custom<sp/>message<sp/>field<sp/>is<sp/>assigned<sp/>for<sp/>front<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>message<sp/>fields<sp/>is<sp/>published</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pub.publish(pub_msg)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#rate.sleep()<sp/>will<sp/>dynamically<sp/>choose<sp/>the<sp/>correct<sp/>amount<sp/>of<sp/>time<sp/>to<sp/>sleep<sp/>to<sp/>respect<sp/>the<sp/>given<sp/>frequency<sp/>(delay<sp/>of<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rate.sleep()</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment">#this<sp/>is<sp/>used<sp/>to<sp/>execute<sp/>some<sp/>code<sp/>only<sp/>if<sp/>the<sp/>file<sp/>was<sp/>run<sp/>directly,<sp/>and<sp/>not<sp/>imported</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__==</highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceobstacle__avoidance_1a8201cd0fe8f999f092ce132a7a2c833e" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+    </programlisting>
+    <location file="scripts/obstacle_avoidance.py"/>
+  </compounddef>
+</doxygen>

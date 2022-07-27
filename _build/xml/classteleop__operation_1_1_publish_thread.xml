@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classteleop__operation_1_1_publish_thread" kind="class" language="Python" prot="public">
+    <compoundname>teleop_operation::PublishThread</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Thread</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1a1e8e9865c70bced59431d426836a9054" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::publisher</definition>
+        <argsstring></argsstring>
+        <name>publisher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="108" column="1" bodyfile="scripts/teleop_operation.py" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1ae705c309117a25968e4330f01a53e973" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="109" column="1" bodyfile="scripts/teleop_operation.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1aa85812d65825b9bb9136a56c0367b5f1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="110" column="1" bodyfile="scripts/teleop_operation.py" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1add44e11850919f90e8e7db195b9372ea" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="111" column="1" bodyfile="scripts/teleop_operation.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1ab10d2af51deefd3b9a871d1cff955b2e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::th</definition>
+        <argsstring></argsstring>
+        <name>th</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="112" column="1" bodyfile="scripts/teleop_operation.py" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1a9f7c728d5ee0bfdb3210f963efc66657" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="113" column="1" bodyfile="scripts/teleop_operation.py" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1a75136504f772f0464c421e89d2682a08" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::turn</definition>
+        <argsstring></argsstring>
+        <name>turn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="114" column="1" bodyfile="scripts/teleop_operation.py" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1aa691228a64e2a22c88c064363445f5fd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::condition</definition>
+        <argsstring></argsstring>
+        <name>condition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="115" column="1" bodyfile="scripts/teleop_operation.py" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1aa07cb7fb517e1d4e175714b4391186f0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::done</definition>
+        <argsstring></argsstring>
+        <name>done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="116" column="1" bodyfile="scripts/teleop_operation.py" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classteleop__operation_1_1_publish_thread_1aede8064a30beeb5b403208a322816f67" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.PublishThread::timeout</definition>
+        <argsstring></argsstring>
+        <name>timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="120" column="1" bodyfile="scripts/teleop_operation.py" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classteleop__operation_1_1_publish_thread_1abf9dd086ee766ce2f4c9666731da8343" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.PublishThread.__init__</definition>
+        <argsstring>(self, rate)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rate</type>
+          <defname>rate</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="105" column="1" bodyfile="scripts/teleop_operation.py" bodystart="105" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classteleop__operation_1_1_publish_thread_1a622a10b926d83a21a8333e47c5ee5d1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.PublishThread.wait_for_subscribers</definition>
+        <argsstring>(self)</argsstring>
+        <name>wait_for_subscribers</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>  Args:
+      self
+ 
+      No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="126" column="1" bodyfile="scripts/teleop_operation.py" bodystart="126" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classteleop__operation_1_1_publish_thread_1a6526f1bf9415bef4c99825e38375a7f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.PublishThread.update</definition>
+        <argsstring>(self, x, y, z, th, speed, turn)</argsstring>
+        <name>update</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <param>
+          <type>z</type>
+          <defname>z</defname>
+        </param>
+        <param>
+          <type>th</type>
+          <defname>th</defname>
+        </param>
+        <param>
+          <type>speed</type>
+          <defname>speed</defname>
+        </param>
+        <param>
+          <type>turn</type>
+          <defname>turn</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>  Args:
+      self
+      x: for x coordinates
+  y: for y coordinates
+  z: for z coordinates
+  th: for threshold
+  speed: for speed of the robot
+  turn: for turning variable     
+      No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="145" column="1" bodyfile="scripts/teleop_operation.py" bodystart="145" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classteleop__operation_1_1_publish_thread_1a2a09a20d45c33a2a9e965cf1681d3744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.PublishThread.stop</definition>
+        <argsstring>(self)</argsstring>
+        <name>stop</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>  Args:
+      self
+ 
+      No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="170" column="1" bodyfile="scripts/teleop_operation.py" bodystart="170" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classteleop__operation_1_1_publish_thread_1a2d3aea516b03406c29cc9b5df76138f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.PublishThread.stop_motion</definition>
+        <argsstring>(self)</argsstring>
+        <name>stop_motion</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This halt_robot function is added to the &quot;PublishThread&quot; class. This function will make 
+the robot movement halt once the driving 
+operation is switched. This function will set the linear and angular velocity to 0 with 
+the &quot;Twist&quot; message through the &quot;/cmd_vel&quot; 
+topic.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="184" column="1" bodyfile="scripts/teleop_operation.py" bodystart="184" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classteleop__operation_1_1_publish_thread_1a3f231a2c778ba71c55fed5023b7651d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.PublishThread.run</definition>
+        <argsstring>(self)</argsstring>
+        <name>run</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="203" column="1" bodyfile="scripts/teleop_operation.py" bodystart="203" bodyend="232"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>threading::Thread</label>
+      </node>
+      <node id="1">
+        <label>teleop_operation.PublishThread</label>
+        <link refid="classteleop__operation_1_1_publish_thread"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>threading::Thread</label>
+      </node>
+      <node id="1">
+        <label>teleop_operation.PublishThread</label>
+        <link refid="classteleop__operation_1_1_publish_thread"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="scripts/teleop_operation.py" line="102" column="1" bodyfile="scripts/teleop_operation.py" bodystart="102" bodyend="233"/>
+    <listofallmembers>
+      <member refid="classteleop__operation_1_1_publish_thread_1abf9dd086ee766ce2f4c9666731da8343" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>__init__</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1aa691228a64e2a22c88c064363445f5fd" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>condition</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1aa07cb7fb517e1d4e175714b4391186f0" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>done</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1a1e8e9865c70bced59431d426836a9054" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>publisher</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1a3f231a2c778ba71c55fed5023b7651d3" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>run</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1a9f7c728d5ee0bfdb3210f963efc66657" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>speed</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1a2a09a20d45c33a2a9e965cf1681d3744" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>stop</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1a2d3aea516b03406c29cc9b5df76138f7" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>stop_motion</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1ab10d2af51deefd3b9a871d1cff955b2e" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>th</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1aede8064a30beeb5b403208a322816f67" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>timeout</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1a75136504f772f0464c421e89d2682a08" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>turn</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1a6526f1bf9415bef4c99825e38375a7f3" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>update</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1a622a10b926d83a21a8333e47c5ee5d1a" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>wait_for_subscribers</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1ae705c309117a25968e4330f01a53e973" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>x</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1aa85812d65825b9bb9136a56c0367b5f1" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>y</name></member>
+      <member refid="classteleop__operation_1_1_publish_thread_1add44e11850919f90e8e7db195b9372ea" prot="public" virt="non-virtual"><scope>teleop_operation::PublishThread</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

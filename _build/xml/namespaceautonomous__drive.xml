@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceautonomous__drive" kind="namespace" language="Python">
+    <compoundname>autonomous_drive</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceautonomous__drive_1a198a2b15e70c2b458d0f647325d8bd3a" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string autonomous_drive.state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <initializer>= &quot;                                                                  &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="50" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceautonomous__drive_1abe7bf9a31a43b763f37bddad2457c4d8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool autonomous_drive.goalf</definition>
+        <argsstring></argsstring>
+        <name>goalf</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="53" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceautonomous__drive_1adb1a4401abc25d9f39a9c756f0e5ba4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def autonomous_drive.refresh_variables</definition>
+        <argsstring>()</argsstring>
+        <name>refresh_variables</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>gloabal keyword allows us to modify the variable outside of the current scope. It is 
+used to create a global variable and make   changes to the variable in a local context.
+
+No Args 
+
+No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="56" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="56" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceautonomous__drive_1a02054103f62ea784d400cb4060dff703" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def autonomous_drive.CallBack_odometry</definition>
+        <argsstring>(msg)</argsstring>
+        <name>CallBack_odometry</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Here, the arguement msg (/odom.msg): this will hold the present position of the robot in
+the enviroment in the terms of x and y
+
+Args:
+ msg (/odom.msg): this variable will contain the current x/y position of the robot in
+ the enviroment.
+ 
+ No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="72" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="72" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceautonomous__drive_1a01c053da76775a7077ac3fa02610ab6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def autonomous_drive.CallBack</definition>
+        <argsstring>(status, result)</argsstring>
+        <name>CallBack</name>
+        <param>
+          <type>status</type>
+          <defname>status</defname>
+        </param>
+        <param>
+          <type>result</type>
+          <defname>result</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Arguments status and result states that actionlib_goalStatus and MoveBaseResult
+
+Args:
+ status (actionlib_goalStatus): integer code corrisponding to the terminal state.
+ result (MoveBaseResult): result of the goal processing.
+ 
+No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="90" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="90" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceautonomous__drive_1ad596380351193894e48f76137469503a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def autonomous_drive.action_client_set_goal</definition>
+        <argsstring>()</argsstring>
+        <name>action_client_set_goal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This function will set the goal
+
+No Args 
+
+No returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="110" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="110" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceautonomous__drive_1a2620136798b5db050411e38994960396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def autonomous_drive.action_client_init</definition>
+        <argsstring>()</argsstring>
+        <name>action_client_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="128" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="128" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceautonomous__drive_1a05a14c4ae40dffe61826b28e5461cecd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def autonomous_drive.CallBack_reset</definition>
+        <argsstring>(event)</argsstring>
+        <name>CallBack_reset</name>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>event is time variable
+
+active_ is the parameter which will set to 0 and this resets whole state of the
+operations
+
+Args:
+ event (float) : for time variable 
+
+No Returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="153" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="153" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceautonomous__drive_1a28d8f673172c80c30feab545f47e5972" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def autonomous_drive.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>In main(), robot&apos;s behaviour will constantly supervised. While loop will start spin 
+right away when the CallBack function subscribed and the node is initialized. During the 
+loop execution node will call the last defined functions as per the present state of the 
+robot defined by the user using global parameters variables. Lastly, it will display the 
+excution states as well.
+
+Fetching the values from the Parameter Server. We can also optionally pass in a default 
+value to use if the parameter is not set
+
+No returns
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/autonomous_drive.py" line="176" column="1" bodyfile="scripts/autonomous_drive.py" bodystart="176" bodyend="284"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: autonomous_drive
+    :platform: Unix
+    :synopsis: Python module for autonomous_drive mode.
+.. moduleauthor:: Ankur Kohli
+
+Action client:
+    /move_base
+    
+This node is called the autonomous_driving node that allows the robot to reach a specified position provided by user.
+
+Regarding on the input of the user, those inputs will be sent as a goal to the action server /move_base. 
+
+During the movement, the robot sends feedback regarding status of the goal either reached or cancelled with publishers like /move_base/goal or /move_base/cancel respectively. The robot can create a map with help of gmapping. User is also able
+to cancel the goal, and provide a new one. 
+
+Subscribes to:
+ /nav_msgs/odometry topic where the simulator publishes the robot position.
+ 
+Action:
+ MoveBaseAction
+ MoveBaseGoal
+ 
+The Action Client-Service communicate via a &quot;ROS Action Protocol&quot;, which is built on top of ROS messages. The client and server then provide a simple API for users to request goals (on the client side) or to execute goals (on the server side) via function calls and callbacks. 
+
+Through out the coding of this node I implemented only the *Actionclient* side of the whole structure using the already existing server of the following action messages:
+
+* ``MoveBaseAction``
+* ``MoveBaseGoal``
+ 
+The Actionlib feature, an ActionServer receives the goal message from an ActionClient. In the case of this assignment, the goal is to move the robot&apos;s base position. The goal would be a MoveBaseGoal message that contains information about where the robot should move to in the world. For controlling all the robot positions in space, the goal would contain the *target_pose* parameters (stamp, orientation, target position, etc).</verbatim> </para>
+    </detaileddescription>
+    <location file="scripts/autonomous_drive.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

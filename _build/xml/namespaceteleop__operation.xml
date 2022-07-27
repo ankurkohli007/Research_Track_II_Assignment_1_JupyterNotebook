@@ -1,0 +1,554 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceteleop__operation" kind="namespace" language="Python">
+    <compoundname>teleop_operation</compoundname>
+    <innerclass refid="classteleop__operation_1_1_publish_thread" prot="public">teleop_operation::PublishThread</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceteleop__operation_1ae455bcc4a2ce8f8494b903b5f6fb7af9" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string teleop_operation.msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <initializer>=  &quot;&quot;&quot;
+This node makes the robot move using keynoard and this will publish to twist.
+---------------------------
+Moving around:
+           k   
+      j    i    l 
+
+For Holonomic mode (strafing), hold down the shift key:
+---------------------------
+           K    
+      U    I    L
+anything else : stop
+
+q/z : accelerate/decelrate velocity by 10%
+w/x : accelerate/decelrate only linear velocity by 10%
+e/c : accelerate/decelrate only angular velocity by 10%
+
+CTRL-C to quit
+&quot;&quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="45" column="1" bodyfile="scripts/teleop_operation.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a25459407643eccbad423c1e033037f6f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool teleop_operation.l</definition>
+        <argsstring></argsstring>
+        <name>l</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="65" column="1" bodyfile="scripts/teleop_operation.py" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a998e8732e0776d04560dbe86ca6a6dfb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool teleop_operation.r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="66" column="1" bodyfile="scripts/teleop_operation.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1aeac98c7804d50e9fe48e659ad8e8579d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool teleop_operation.f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="67" column="1" bodyfile="scripts/teleop_operation.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1ada8db3fe389ca35db358375697a3ae77" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool teleop_operation.fl</definition>
+        <argsstring></argsstring>
+        <name>fl</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="68" column="1" bodyfile="scripts/teleop_operation.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a9c69cf192d025c984009320a335414fa" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool teleop_operation.fr</definition>
+        <argsstring></argsstring>
+        <name>fr</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="69" column="1" bodyfile="scripts/teleop_operation.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a3aa651b8b1ec1e55f4aad79d04536c04" prot="public" static="no" mutable="no">
+        <type>dictionary</type>
+        <definition>dictionary teleop_operation.moveBindings</definition>
+        <argsstring></argsstring>
+        <name>moveBindings</name>
+        <initializer>=  {
+        &apos;i&apos;:(1,0,0,0),
+        &apos;o&apos;:(1,0,0,-1),
+        &apos;j&apos;:(0,0,0,1),
+        &apos;l&apos;:(0,0,0,-1),
+        &apos;u&apos;:(1,0,0,1),
+        &apos;k&apos;:(-1,0,0,0),
+        &apos;.&apos;:(-1,0,0,1),
+        &apos;m&apos;:(-1,0,0,-1),
+        &apos;O&apos;:(1,-1,0,0),
+        &apos;I&apos;:(1,0,0,0),
+        &apos;J&apos;:(0,1,0,0),
+        &apos;L&apos;:(0,-1,0,0),
+        &apos;U&apos;:(1,1,0,0),
+        &apos;K&apos;:(-1,0,0,0),
+        &apos;&gt;&apos;:(-1,-1,0,0),
+        &apos;M&apos;:(-1,1,0,0),
+        &apos;t&apos;:(0,0,1,0),
+        &apos;b&apos;:(0,0,-1,0),
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="70" column="1" bodyfile="scripts/teleop_operation.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1ab93ac42c9e229876ddd1070c0233b096" prot="public" static="no" mutable="no">
+        <type>dictionary</type>
+        <definition>dictionary teleop_operation.speedBindings</definition>
+        <argsstring></argsstring>
+        <name>speedBindings</name>
+        <initializer>= {
+        &apos;q&apos;:(1.1,1.1),
+        &apos;z&apos;:(.9,.9),
+        &apos;w&apos;:(1.1,1),
+        &apos;x&apos;:(.9,1),
+        &apos;e&apos;:(1,1.1),
+        &apos;c&apos;:(1,.9),
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="92" column="1" bodyfile="scripts/teleop_operation.py" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1afaa894c082f7e3b52df863dda34def22" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.active_</definition>
+        <argsstring></argsstring>
+        <name>active_</name>
+        <initializer>= rospy.get_param(&quot;/active&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="346" column="1" bodyfile="scripts/teleop_operation.py" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1af5fab2b3a052afdac39211be0fdfb911" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool teleop_operation::f1</definition>
+        <argsstring></argsstring>
+        <name>f1</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="350" column="1" bodyfile="scripts/teleop_operation.py" bodystart="350" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a020204790f87623c5e14f76b01637059" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool teleop_operation::f2</definition>
+        <argsstring></argsstring>
+        <name>f2</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="351" column="1" bodyfile="scripts/teleop_operation.py" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a265b40e4060ebb80f2c736526774c822" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.settings</definition>
+        <argsstring></argsstring>
+        <name>settings</name>
+        <initializer>=  termios.tcgetattr(sys.stdin)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="355" column="1" bodyfile="scripts/teleop_operation.py" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1ad8cfa722d01039f770748f1b4db1c9b5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>dictionary teleop_operation::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <initializer>=  rospy.get_param(&quot;~speed&quot;, 0.5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="356" column="1" bodyfile="scripts/teleop_operation.py" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a46a99f5eda19dfe9580fdb5daf11c825" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>dictionary teleop_operation::turn</definition>
+        <argsstring></argsstring>
+        <name>turn</name>
+        <initializer>=  rospy.get_param(&quot;~turn&quot;, 1.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="357" column="1" bodyfile="scripts/teleop_operation.py" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1aaf4aff1db14beb5cef518407fbf093b8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.repeat</definition>
+        <argsstring></argsstring>
+        <name>repeat</name>
+        <initializer>=  rospy.get_param(&quot;~repeat_rate&quot;, 0.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="358" column="1" bodyfile="scripts/teleop_operation.py" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1ae9534fbb923b4d7cbb384d779f62bec8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.key_timeout</definition>
+        <argsstring></argsstring>
+        <name>key_timeout</name>
+        <initializer>=  rospy.get_param(&quot;~key_timeout&quot;, 0.1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="359" column="1" bodyfile="scripts/teleop_operation.py" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1adcc8aca2c9e9b0e7ad08b229c047d3aa" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.pub_thread</definition>
+        <argsstring></argsstring>
+        <name>pub_thread</name>
+        <initializer>=  <ref refid="classteleop__operation_1_1_publish_thread" kindref="compound">PublishThread</ref>(repeat)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="364" column="1" bodyfile="scripts/teleop_operation.py" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a242fef25d7c6bc747881a3ebdb82fdb3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int teleop_operation::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="366" column="1" bodyfile="scripts/teleop_operation.py" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a4e0484356f5b728d81f25e22b0d6f910" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int teleop_operation::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="367" column="1" bodyfile="scripts/teleop_operation.py" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1abc5df5e4a49d57466e54eaf6a309ff2f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int teleop_operation::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="368" column="1" bodyfile="scripts/teleop_operation.py" bodystart="368" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a983a9f83a84f0ebf895faf586265f669" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int teleop_operation::th</definition>
+        <argsstring></argsstring>
+        <name>th</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="369" column="1" bodyfile="scripts/teleop_operation.py" bodystart="369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a46e6fbab95e9e7f6b51426fdc1cc4ae8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>tuple teleop_operation::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="370" column="1" bodyfile="scripts/teleop_operation.py" bodystart="370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a9ceed5bebdf8ca8a2a36672f9fb54a71" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>teleop_operation.rate</definition>
+        <argsstring></argsstring>
+        <name>rate</name>
+        <initializer>=  rospy.Rate(5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="372" column="1" bodyfile="scripts/teleop_operation.py" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a6bd51e59258c03a9de31b5a4bf5fe62a" prot="public" static="no" mutable="no">
+        <type>dictionary</type>
+        <definition>dictionary teleop_operation::moveBindings_temp</definition>
+        <argsstring></argsstring>
+        <name>moveBindings_temp</name>
+        <initializer>=  {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="375" column="1" bodyfile="scripts/teleop_operation.py" bodystart="375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1aa7527156ad9cc21cf9f222cf6384bf45" prot="public" static="no" mutable="no">
+        <type>def</type>
+        <definition>def teleop_operation.key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <initializer>=  getKey(key_timeout)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="395" column="1" bodyfile="scripts/teleop_operation.py" bodystart="395" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceteleop__operation_1a08d0fc9260fc367a6166bb0b27ad08a3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int teleop_operation.flag</definition>
+        <argsstring></argsstring>
+        <name>flag</name>
+        <initializer>=  1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="428" column="1" bodyfile="scripts/teleop_operation.py" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceteleop__operation_1a66051e67ee7305183e00fe4a329390f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.getKey</definition>
+        <argsstring>(key_timeout)</argsstring>
+        <name>getKey</name>
+        <param>
+          <type>key_timeout</type>
+          <defname>key_timeout</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="233" column="1" bodyfile="scripts/teleop_operation.py" bodystart="233" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceteleop__operation_1a96bc55bb6ee915dd5b84db329179caba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.CallBack_avoidance</definition>
+        <argsstring>(msg)</argsstring>
+        <name>CallBack_avoidance</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The node which is subscribes to the custom topic &quot;custom_controller&quot; implemented for publishing the &quot;Avoidingwall.msg&quot; message which 
+contains the info about the walls surrounding the robot. 
+
+The CallBack will subscribed and sets some local variables which is equal to the published fields of the custom messages. 
+
+This will use such variables function to change some inputs from the keyboards and also to prevent the user to drive the robot into 
+walls.
+
+gloabal keyword allows us to modify the variable outside of the current scope. It is used to create a global variable and make 
+changes to the variable in a local context.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="244" column="1" bodyfile="scripts/teleop_operation.py" bodystart="244" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceteleop__operation_1aeff5576db385051affabb05219de3ca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.new_command</definition>
+        <argsstring>(dictionary)</argsstring>
+        <name>new_command</name>
+        <param>
+          <type>dictionary</type>
+          <defname>dictionary</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This function will going to use pop command and this pop command will remove some keys from the commands right away. 
+
+This removal will inccurs as per the values received by the last callback function to the &quot;\custom_controller&quot; topic. 
+
+These recieved values from the teleop node are relocated in the local variables such as
+
+r:
+      1 = the wall is not close to the right of the robot. The user will be able to turn right. 
+      0 = the wall is close to the right of the robot. The user will not be able to turn right.
+
+l:
+      1 = the wall is not close to the left of the robot. The user will be able to turn left. 
+      0 = the wall is close to the left of the robot. The user will not be able to turn left.
+
+f:
+      1 = the wall is not close to the front of the robot. The user will be able to drive straight. 
+      0 = the wall is close to the front of the robot. The user will not be able to drive straight.
+      
+fr:
+      1 = the wall is not close to the fron-right of the robot. The user will be able to turn front-right. 
+      0 = the wall is close to the front-right of the robot. The user will not be able to turn front-right.
+
+fl:
+      1 = the wall is not close to the front-left of the robot. The user will be able to turn front-left. 
+      0 = the wall is close to the front-left of the robot. The user will not be able to turn front-left.   </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="270" column="1" bodyfile="scripts/teleop_operation.py" bodystart="270" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceteleop__operation_1a501c7f901bbea1f518b427bd4ec57ac0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def teleop_operation.vels</definition>
+        <argsstring>(speed, turn)</argsstring>
+        <name>vels</name>
+        <param>
+          <type>speed</type>
+          <defname>speed</defname>
+        </param>
+        <param>
+          <type>turn</type>
+          <defname>turn</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/teleop_operation.py" line="339" column="1" bodyfile="scripts/teleop_operation.py" bodystart="339" bodyend="342"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: teleop_operation
+:platform: Unix
+:synopsis: Python module for the teleop operation
+.. moduleauthor:: Ankur Kohli
+
+This node allows to use the robot in manual mode. The robot can be controlled with keyboards.
+BY receiving the inputs, the robot moves forward/backward, right/left. 
+
+
+Publishes to:
+ /cmd_vel
+ 
+The script is based on the standard ROS `teleop_twist_keyboard.py &lt;http://wiki.ros.org/teleop_twist_keyboard&gt;`.
+
+This node is constantly checking which keys are pressed on a PC keyboard and based on the pressed keys, publishes twist messages on the ``/cmd_vel`` topic. Twist message defines what should be the linear and rotational speeds of a mobile robot.
+
+Some functions and changes were made to the code to merge it with the `avoidence.py` publisher and to manage the alternity of the activation state.
+
+Just like all the other programs, I had to manage the alternity of the *idle* to the *active* state through the use of an if-statement. Since the node also includes the functionalities of the third modality, the statement will set the node to an active modality if the ``active`` param is either set to 3 or 2.
+
+A new function named ``stop_motion`` to the ``PublishThread`` class. This function will make the robot stop once the driving modality gets switched. The function will set the linear and angular velocity to 0 with the `twist` message through the ``/cmd_vel`` topic.
+</verbatim> </para>
+    </detaileddescription>
+    <location file="scripts/teleop_operation.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="master__control_8py" kind="file" language="Python">
+    <compoundname>master_control.py</compoundname>
+    <innernamespace refid="namespacemaster__control">master_control</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacemaster__control" refkind="compound"><highlight class="comment">#!/usr/bin/python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">This<sp/>is<sp/>a<sp/>master_control_node<sp/>which<sp/>will<sp/>accepts<sp/>and<sp/>reads<sp/>the<sp/>user<sp/>request<sp/>and<sp/>change<sp/>the<sp/>behaviour<sp/>of<sp/>the<sp/>robot<sp/>acording<sp/>to<sp/>user<sp/>input.</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">..<sp/>module::<sp/>master_control</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:platform<sp/>Unix</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:synopsis:<sp/>Python<sp/>module<sp/>for<sp/>managing<sp/>the<sp/>robot<sp/>behaviour</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">..<sp/>moduleauthor::<sp/>Ankur<sp/>Kohli</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">This<sp/>node<sp/>is<sp/>used<sp/>to<sp/>manage<sp/>the<sp/>robot&apos;s<sp/>operation<sp/>according<sp/>to<sp/>user.<sp/>With<sp/>this<sp/>user<sp/>interface,<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">the<sp/>user<sp/>can<sp/>choose<sp/>either<sp/>autonomous_drive<sp/>mode,<sp/>teleop_operation<sp/>mode<sp/>and<sp/>obstacle_avoidance<sp/>mode.<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral">This<sp/>file<sp/>is<sp/>calling<sp/>specific<sp/>functions<sp/>in<sp/>terminal<sp/>and<sp/>receive<sp/>inputs.<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral">--<sp/>Robot&apos;s<sp/>Behaviour<sp/>options</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral">========================</highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral">*<sp/>Press<sp/>1:<sp/>Autonomously<sp/>driving<sp/>robot<sp/>to<sp/>reach<sp/>at<sp/>x,y<sp/>coordinates<sp/>as<sp/>per<sp/>input<sp/>by<sp/>the<sp/>user<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral">*<sp/>Press<sp/>2:<sp/>Teleop<sp/>operations<sp/>by<sp/>the<sp/>user<sp/>drive<sp/>the<sp/>robot<sp/>using<sp/>keyboard</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral">*<sp/>Press<sp/>3:<sp/>Obstacle<sp/>avoidance<sp/>operations<sp/>to<sp/>drive<sp/>the<sp/>robot<sp/>assisting<sp/>them<sp/>(using<sp/>keyboard)<sp/>to<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/>avoid<sp/>collisions<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral">*<sp/>Press<sp/>0:<sp/>Lazy<sp/>state<sp/>of<sp/>robot,<sp/>in<sp/>this<sp/>state<sp/>robot<sp/>will<sp/>shows<sp/>laziness<sp/>and<sp/>do<sp/>nothing<sp/>untill</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral"><sp/><sp/>and<sp/>unless<sp/>the<sp/>robots&apos;s<sp/>behvaiour<sp/>is<sp/>chnaged<sp/>by<sp/>the<sp/>user</highlight></codeline>
+<codeline lineno="27"><highlight class="stringliteral"><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral">--<sp/>Parameters</highlight></codeline>
+<codeline lineno="29"><highlight class="stringliteral">================</highlight></codeline>
+<codeline lineno="30"><highlight class="stringliteral">The<sp/>``launch_nodes.launch``<sp/>launch<sp/>file,<sp/>is<sp/>added<sp/>for<sp/>*three<sp/>parameters*<sp/>to<sp/>the<sp/>project<sp/>for<sp/>managing<sp/>the<sp/>*different<sp/>robot&apos;s<sp/>state*<sp/>of<sp/>all<sp/>the<sp/>nodes<sp/>involved<sp/>in<sp/>the<sp/>project.</highlight></codeline>
+<codeline lineno="31"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="32"><highlight class="stringliteral">The<sp/>three<sp/>parameters<sp/>are:</highlight></codeline>
+<codeline lineno="33"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral">*Active*:<sp/>This<sp/>parameter<sp/>manages<sp/>the<sp/>current<sp/>state<sp/>of<sp/>the<sp/>project&apos;s<sp/>ROS<sp/>node<sp/>chain.<sp/>Once<sp/>the<sp/>program<sp/>is<sp/>launched,<sp/>the<sp/>parameter<sp/>is<sp/>set<sp/>to<sp/>be<sp/>in<sp/>*Lazy<sp/>state<sp/>of<sp/>robot*<sp/>(0<sp/>states).<sp/>In<sp/>the<sp/>beginning,<sp/>one<sp/>of<sp/>the<sp/>nodes<sp/>will<sp/>be<sp/>in<sp/>its<sp/>active<sp/>state.<sp/>The<sp/>User<sp/>interface<sp/>node<sp/>is<sp/>capable<sp/>of<sp/>managing<sp/>the<sp/>change<sp/>of<sp/>the<sp/>value<sp/>of<sp/>this<sp/>parameter<sp/>thanks<sp/>to<sp/>the<sp/>retrieved<sp/>user<sp/>input.<sp/>A<sp/>simple<sp/>legend<sp/>will<sp/>tell<sp/>the<sp/>user<sp/>what<sp/>button<sp/>to<sp/>press<sp/>for<sp/>running<sp/>a<sp/>certain<sp/>driving<sp/>modality.<sp/>The<sp/>user<sp/>input<sp/>will<sp/>change<sp/>the<sp/>value<sp/>of<sp/>the<sp/>parameter<sp/>and<sp/>all<sp/>the<sp/>nodes<sp/>will<sp/>either<sp/>keep<sp/>their<sp/>current<sp/>idle<sp/>state<sp/>or<sp/>switch<sp/>to<sp/>a<sp/>running<sp/>state.<sp/>An<sp/>if-else<sp/>statement<sp/>inside<sp/>every<sp/>node<sp/>manages<sp/>this<sp/>operation<sp/>to<sp/>switch.</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral">*Posion<sp/>X<sp/>and<sp/>Position<sp/>Y*:<sp/>Also,<sp/>these<sp/>two<sp/>parameters<sp/>are<sp/>retrieved<sp/>by<sp/>an<sp/>input<sp/>user<sp/>managed<sp/>in<sp/>the<sp/>User<sp/>Interface<sp/>node.<sp/>Once<sp/>the<sp/>user<sp/>selects<sp/>the<sp/>*first<sp/>operation<sp/>[1]*<sp/>the<sp/>User<sp/>interface<sp/>will<sp/>also<sp/>ask<sp/>for<sp/>an<sp/>X<sp/>and<sp/>Y<sp/>coordinate.<sp/>This<sp/>data<sp/>represents<sp/>the<sp/>position<sp/>we<sp/>want<sp/>the<sp/>robot<sp/>to<sp/>go.<sp/>If<sp/>the<sp/>user<sp/>wants<sp/>to<sp/>stop<sp/>the<sp/>robot&apos;s<sp/>motion,<sp/>it<sp/>is<sp/>sufficient<sp/>to<sp/>either<sp/>input<sp/>another<sp/>driving<sp/>modality<sp/>or<sp/>set<sp/>the<sp/>project<sp/>idle<sp/>state.</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral">The<sp/>User<sp/>interface<sp/>node<sp/>will<sp/>also<sp/>keep<sp/>the<sp/>user<sp/>updated<sp/>on<sp/>the<sp/>present<sp/>robot&apos;s<sp/>operation<sp/>and<sp/>the<sp/>on-screen<sp/>messages<sp/>sent<sp/>at<sp/>every<sp/>state<sp/>switch.<sp/>Some<sp/>flags<sp/>will<sp/>keep<sp/>track<sp/>of<sp/>the<sp/>current<sp/>operation<sp/>based<sp/>on<sp/>the<sp/>User<sp/>inputs.</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">#<sp/>importig<sp/>required<sp/>libraries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacestd__srvs_1_1srv" kindref="compound">std_srvs.srv</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>math</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">msg<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral">**Robot&apos;s<sp/>Behaviour<sp/>options**</highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral">#Press<sp/>1:<sp/>Autonomously<sp/>driving<sp/>robot<sp/>to<sp/>reach<sp/>at<sp/>x,y<sp/>coordinates<sp/>as<sp/>per<sp/>input<sp/>by<sp/>the<sp/>user<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral">#Press<sp/>2:<sp/>Teleop<sp/>operations<sp/>by<sp/>the<sp/>user<sp/>drive<sp/>the<sp/>robot<sp/>using<sp/>keyboard</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral">#Press<sp/>3:<sp/>Obstacle<sp/>avoidance<sp/>operations<sp/>to<sp/>drive<sp/>the<sp/>robot<sp/>assisting<sp/>them<sp/>(using<sp/>keyboard)<sp/>to<sp/>avoid<sp/>collisions<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral">#Press<sp/>0:<sp/>Lazy<sp/>state<sp/>of<sp/>robot,<sp/>in<sp/>this<sp/>state<sp/>robot<sp/>will<sp/>shows<sp/>laziness<sp/>and<sp/>do<sp/>nothing<sp/>untill<sp/>and<sp/>unless<sp/>the<sp/>robots&apos;s<sp/>behvaiour<sp/>is<sp/>chnaged<sp/>by<sp/>the<sp/>user</highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral">anything<sp/>else<sp/>:<sp/>stop</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral">q/z<sp/>:<sp/>accelerate/decelrate<sp/>velocity<sp/>by<sp/>10%</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral">w/x<sp/>:<sp/>accelerate/decelrate<sp/>only<sp/>linear<sp/>velocity<sp/>by<sp/>10%</highlight></codeline>
+<codeline lineno="63"><highlight class="stringliteral">e/c<sp/>:<sp/>accelerate/decelrate<sp/>only<sp/>angular<sp/>velocity<sp/>by<sp/>10%</highlight></codeline>
+<codeline lineno="64"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral">CTRL-C<sp/>to<sp/>quit</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">#main()<sp/>is<sp/>the<sp/>the<sp/>point<sp/>of<sp/>execution<sp/>to<sp/>perform<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacemaster__control_1a3738cbe9b8cb8bab7a46877625a1b574" kindref="member">main</ref>():</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="71"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>In<sp/>main(),<sp/>user<sp/>will<sp/>be<sp/>asked<sp/>contantly<sp/>for<sp/>the<sp/>input<sp/>to<sp/>change<sp/>the<sp/>robot&apos;s<sp/>behaviour<sp/>such<sp/>as<sp/>autonomously<sp/>drive<sp/>mode,<sp/>teleop</highlight></codeline>
+<codeline lineno="72"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>keyboard<sp/>mode,<sp/>obstacle<sp/>avoidance<sp/>mode,<sp/>idle<sp/>mode,<sp/>and<sp/>so<sp/>on.<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>No<sp/>Returns</highlight></codeline>
+<codeline lineno="75"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>this<sp/>will<sp/>print<sp/>a<sp/>goal<sp/>cancellation<sp/>message<sp/>whenever<sp/>any<sp/>operation<sp/>under<sp/>execution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>rospy.is_shutdown():<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>command<sp/>=<sp/>int(input(</highlight><highlight class="stringliteral">&apos;Benvenuti!!<sp/>Please<sp/>choose<sp/>the<sp/>operation<sp/>to<sp/>change<sp/>robot<sp/>behaviour&apos;</highlight><highlight class="normal">))<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Now<sp/>checking<sp/>the<sp/>option<sp/>entered<sp/>by<sp/>the<sp/>user<sp/>to<sp/>change<sp/>robot<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>OPERATION<sp/>1:<sp/>AUTONOMOUS<sp/>DRIVING<sp/>MODE<sp/>TO<sp/>REACH<sp/>AT<sp/>X,Y<sp/>COORDINATES<sp/>(User&apos;s<sp/>Desired<sp/>Position)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>command<sp/>==<sp/>1:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>f<sp/>==<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Sorry!!<sp/>Cancelling<sp/>the<sp/>operation&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;active&apos;</highlight><highlight class="normal">,<sp/>0)<sp/></highlight><highlight class="comment">#<sp/>resetting<sp/>robot&apos;s<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Displaying<sp/>message<sp/>for<sp/>the<sp/>user<sp/>to<sp/>know<sp/>the<sp/>actuale<sp/>state<sp/>of<sp/>robot<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Now<sp/>robot<sp/>is<sp/>in<sp/>operation<sp/>1<sp/>state,<sp/>if<sp/>you<sp/>want<sp/>to<sp/>cancel<sp/>robot&apos;s<sp/>behaviour<sp/>then<sp/>press<sp/>&apos;0&apos;!!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Now<sp/>asking<sp/>the<sp/>user<sp/>to<sp/>input<sp/>the<sp/>target<sp/>position<sp/>i.e.<sp/>x,y<sp/>coordinated<sp/>where<sp/>user<sp/>want<sp/>to<sp/>move<sp/>the<sp/>robot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Please,<sp/>enter<sp/>the<sp/>target<sp/>position<sp/>(x,y<sp/>coordinates)<sp/>where<sp/>you<sp/>want<sp/>to<sp/>send<sp/>the<sp/>robot!!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_x<sp/>=<sp/>float(input(</highlight><highlight class="stringliteral">&quot;Please,<sp/>enter<sp/>X<sp/>coordinate:&quot;</highlight><highlight class="normal">))<sp/></highlight><highlight class="comment">#<sp/>Displaying<sp/>message<sp/>to<sp/>input<sp/>x<sp/>coordinate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos_y<sp/>=<sp/>float(input(</highlight><highlight class="stringliteral">&quot;Please,<sp/>enter<sp/>Y<sp/>coordinate:<sp/>&quot;</highlight><highlight class="normal">))<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Displaying<sp/>message<sp/>to<sp/>input<sp/>y<sp/>coordinate<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Setting<sp/>parameter<sp/>on<sp/>the<sp/>Parameter<sp/>Server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;des_pos_x&apos;</highlight><highlight class="normal">,<sp/>pos_x)<sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;des_pos_y&apos;</highlight><highlight class="normal">,<sp/>pos_y)<sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;active&apos;</highlight><highlight class="normal">,<sp/>1)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;ROBOT<sp/>is<sp/>performing<sp/>opertion<sp/>1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>OPERATION<sp/>2:<sp/>OBSTACLE<sp/>OPERATION<sp/>TO<sp/>CHANGE<sp/>ROBOT&apos;S<sp/>BEHAVIOUR<sp/>USING<sp/>KEYBOARD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>command<sp/>==<sp/>2:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>f<sp/>==<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Sorry!!<sp/>Cancelling<sp/>the<sp/>operation&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;active&apos;</highlight><highlight class="normal">,<sp/>2)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Message<sp/>to<sp/>know<sp/>robot&apos;s<sp/>current<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Now<sp/>robot<sp/>is<sp/>performing<sp/>Operation<sp/>2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>OPERATION<sp/>3:<sp/>OBSTACLE<sp/>OPERATION<sp/>TO<sp/>ASSIST<sp/>ROBOT&apos;S<sp/>BEHAVIOUR<sp/>USING<sp/>KEYBOARD<sp/>&amp;<sp/>AVOIDING<sp/>COLLISION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>command<sp/>==<sp/>3:</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>f<sp/>==<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Sorry!!<sp/>Cancelling<sp/>the<sp/>operation&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;active&apos;</highlight><highlight class="normal">,<sp/>3)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Message<sp/>to<sp/>know<sp/>robot&apos;s<sp/>current<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Now<sp/>robot<sp/>is<sp/>performing<sp/>Operation<sp/>3&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>OPERATION<sp/>4:<sp/>LAZY<sp/>STATE,<sp/>ROBOT<sp/>WILL<sp/>NOT<sp/>PERFORM<sp/>ANY<sp/>ACTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>command<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>f<sp/>==<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Sorry!!<sp/>Cancelling<sp/>the<sp/>operation&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.set_param(</highlight><highlight class="stringliteral">&apos;active&apos;</highlight><highlight class="normal">,<sp/>0)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Message<sp/>to<sp/>know<sp/>robot&apos;s<sp/>current<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Now<sp/>robot<sp/>is<sp/>performing<sp/>Operation<sp/>4&quot;</highlight><highlight class="normal">)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Printing<sp/>the<sp/>actual<sp/>state.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Sorry!!<sp/>Invalid<sp/>input!!<sp/>Please<sp/>choose<sp/>the<sp/>coorect<sp/>option<sp/>to<sp/>perform<sp/>robot<sp/>operations!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">#<sp/>this<sp/>is<sp/>used<sp/>to<sp/>execute<sp/>some<sp/>code<sp/>only<sp/>if<sp/>the<sp/>file<sp/>was<sp/>run<sp/>directly,<sp/>and<sp/>not<sp/>imported.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>print(msg)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemaster__control_1a3738cbe9b8cb8bab7a46877625a1b574" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="scripts/master_control.py"/>
+  </compounddef>
+</doxygen>
