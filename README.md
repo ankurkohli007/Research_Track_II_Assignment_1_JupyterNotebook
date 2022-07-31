@@ -34,11 +34,11 @@ Also, in the docker you will probably need to update firefox with ```apt-get ins
 
 Below is the figure which shows ***Notebook Server***. 
 
-![alt text](ImagesJupyter/jupyterpage.png) 
+![alt text](ImagesJupyter/jupyterserver.png) 
 
 Now, click on the *New* button on the right corner as shown in the figure above. After clicking on this button, it will open a dialogue box which shows the list. Aslo, this python versions installed in your system. In the *Docker image* you should have only Python3 installed. 
 
-![alt text](ImagesJupyter/jupyternotebook.png) 
+![alt text](ImagesJupyter/jupyternotebook.png)  
 
 Figure above shows the first Jupyter Document web page.
 
