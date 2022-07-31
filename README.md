@@ -365,11 +365,11 @@ plt.show(block=True)
 
 Figure above shows the graphical representation of the robot's target reach.
 
+## Conclusion and Improvements
+
 I'm satisfied with the final result, even if better improvements can be done. First of all some parameters can be changed since they may be not optimal. Having said that, there are some particular improvenments that I want to highlight:
 
 * In jupyter notebook data real time data is updating using ```%matplotlib widget``` but at some stage it's lagged and due to this data updation is lagged. This can be improve in further imporvement of the code.
-
-## Conclusion and Improvements
 
 Below are the two improvements which is based on the project [Software Architecture for Mobile Robot Control](https://github.com/ankurkohli007/Research_Track_I_Assignment_3.git).
 
