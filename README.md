@@ -369,6 +369,8 @@ I'm satisfied with the final result, even if better improvements can be done. Fi
 
 * In jupyter notebook data real time data is updating using ```%matplotlib widget``` but at some stage it's lagged and due to this data updation is lagged. This can be improve in further imporvement of the code.
 
+## Conclusion and Improvements
+
 Below are the two improvements which is based on the project [Software Architecture for Mobile Robot Control](https://github.com/ankurkohli007/Research_Track_I_Assignment_3.git).
 
 * In the assisted driving mode, the robot avoid obstacles in the front/left/right related to its vision field, but since it can go also backwards it will inevitably crush on the back side, not avoiding the wall. Future improvements can be done, in order to avoid hitting the wall on the back side, probably using the geometry and the space of the environment.
