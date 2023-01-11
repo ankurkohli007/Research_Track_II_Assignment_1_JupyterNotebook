@@ -365,6 +365,8 @@ plt.show(block=True)
 
 Figure above shows the graphical representation of the robot's target reach.
 
+* **Note:** For complete Jupyter Code [click here](JupyterNotebook/jupyter_userinterface.ipynb).
+
 ## Conclusion and Improvements
 
 I'm satisfied with the final result, even if better improvements can be done. First of all some parameters can be changed since they may be not optimal. Having said that, there are some particular improvenments that I want to highlight:
