@@ -26,7 +26,11 @@ pip3 install jupyter bqplot pyyaml ipywidgets
 jupyter nbextension enable --py widgetsnbextension
 ```
 
-* **Note:**
+* **Note:** If you find errors such as *ImportError: No module named widgetsnbextension*. To resolve such kind of error follow the below links.
+      <ul>
+      <li>[Link 1](http://github.com/jupyter-widgets/pywidgets/issues/568) to know what actual the erro is about </li>
+      <li>[Link 2](http://lpywidgets.readthedocs.io/en/stable/user_install.html) command to resolve the error.</li>
+      </ul>
 
 
 Now, with these two commands Jupyter is installed, let’s start with the interface for the project **Software Architecture for Mobile Robot Control**. To get started, all you need to do is open up your terminal application and go to a folder of your choice. Then run the below command:
