@@ -25,6 +25,10 @@ pip3 install jupyter bqplot pyyaml ipywidgets
 ```
 jupyter nbextension enable --py widgetsnbextension
 ```
+
+* **Note:**
+
+
 Now, with these two commands Jupyter is installed, let’s start with the interface for the project **Software Architecture for Mobile Robot Control**. To get started, all you need to do is open up your terminal application and go to a folder of your choice. Then run the below command:
 ```
 jupyter notebook --allow-root
