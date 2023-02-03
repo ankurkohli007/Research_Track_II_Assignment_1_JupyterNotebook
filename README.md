@@ -7,7 +7,7 @@
 # Jupyter Notebook User Interface for [Software Architecture for Mobile Robot Control](https://github.com/ankurkohli007/Research_Track_I_Assignment_3.git)
 
 ## Abstract
-[Jupyter Notebook](https://jupyter.org/) is an open source web application which is used to create and share documents that contain real-time code, equation, data visualizations, text, and so on. This Jupyetr Nootebook is designed to create the SUer Interface of [my code](https://github.com/ankurkohli007/Research_Track_I_Assignment_3.git). Also, this notebook is developed as an user interface for the the project [Software Architecture for Mobile Robot Control](https://github.com/ankurkohli007/Research_Track_I_Assignment_3.git). For this, ***Jupyter Notebook*** tool is used.
+[Jupyter Notebook](https://jupyter.org/) is an open source web application which is used to create and share documents that contain real-time code, equation, data visualizations, text, and so on. This Jupyetr Nootebook is designed to create the User Interface of [my code](https://github.com/ankurkohli007/Research_Track_I_Assignment_3.git). Also, this notebook is developed as an user interface for the the project [Software Architecture for Mobile Robot Control](https://github.com/ankurkohli007/Research_Track_I_Assignment_3.git). For this, ***Jupyter Notebook*** tool is used.
 
 ## Introduction
 Jupyter Notebooks are a spin-off project from the IPython project, which is used to have an IPython
