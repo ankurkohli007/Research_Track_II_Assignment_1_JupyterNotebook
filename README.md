@@ -276,7 +276,7 @@ def plot_init(self):
 Figure below shows the data visualization of the robot's odometery and laser scanner.
 
 <p align="center">
-  <img width="900" height="700" src="https://github.com/ankurkohli007/Research_Track_II_Assignment_1_JupyterNotebook/blob/0d5dd588362191621f8b20ca1c5f4d920ca5f05d/ImagesJupyter/graphlaserpolar.png">
+  <img width="700" height="900" src="https://github.com/ankurkohli007/Research_Track_II_Assignment_1_JupyterNotebook/blob/0d5dd588362191621f8b20ca1c5f4d920ca5f05d/ImagesJupyter/graphlaserpolar.png">
 </p>
 
 Figure above shows the graphical representation of the robot's laser scanner in polar form.
