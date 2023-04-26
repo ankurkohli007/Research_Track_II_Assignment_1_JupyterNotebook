@@ -1,7 +1,7 @@
 [Research Track II](https://corsi.unige.it/en/off.f/2022/ins/60236)<br>
 **Programmer:** [Ankur Kohli](https://github.com/ankurkohli007)<br>
 [M.Sc Robotics Engineering](https://corsi.unige.it/corsi/10635)<br>
-[University of Genoa (UniGe)](https://unige.it/en)<br>
+[University of Genoa (UniGe), Italy](https://unige.it/en)<br>
 **Supervisor:** [Prof. Carmine Tommaso Recchiuto](https://rubrica.unige.it/personale/UkNDWV1r)
 
 # Jupyter Notebook User Interface for [Software Architecture for Mobile Robot Control](https://github.com/ankurkohli007/Research_Track_I_Assignment_3.git)
