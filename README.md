@@ -107,7 +107,7 @@ from geometry_msgs.msg import Twist
 ```
 
 After importing the libraries now initialize the ROS node for Jupyter and set parameters.
-```
+```python
 # initializing the ROS node for Jupyter
 rospy.init_node('jupyter_node')
 # setting the parameters 
