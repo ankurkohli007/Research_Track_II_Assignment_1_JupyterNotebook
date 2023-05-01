@@ -136,7 +136,7 @@ k5 = Button(description='Setting x,y coordinates',
             style=ButtonStyle(button_color='lightgreen'))
 ```
 Below is the function to define key for autonomous reach and teleop operation of the robot: 
-```
+```python
 # Function to define key for autonomous reach of the robot    
 def key_option_autonomous_reach(k): 
     global avoid
