@@ -57,7 +57,7 @@ Jupyter Notebooks may be used and integrated with ROS called as [Jupyter-Ros](ht
 pip3 install jupyros
 ```
 For the publishing, the package contains tools to automatically generate widgets from message definitions. 
-```
+```python
 import jupyros as jr
 import rospy
 from std_msgs.msg import String
