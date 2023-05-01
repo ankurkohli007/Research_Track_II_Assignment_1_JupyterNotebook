@@ -252,7 +252,7 @@ This part will demonstrates the graphical representation of the robot's behavior
 
 Below is the function shows the plotting of the data of the robot's odometery and laser scanner.
 
-```
+```python
 def plot_init(self): 
         
         self.ax.set_title("Robot's Odometry\n",fontweight="bold")
