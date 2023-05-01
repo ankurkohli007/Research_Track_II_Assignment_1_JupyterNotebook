@@ -207,7 +207,7 @@ def key_option_quit(k):
     rospy.set_param('active', 0)
 ```
 The code below shows the buttons to change the modalities of the robot: 
-```
+```python
 k1.on_click(key_option_autonomous_reach)
 k2.on_click(key_option__teleop_operation)
 k3.on_click(key_option_obstacle_avoidance)
