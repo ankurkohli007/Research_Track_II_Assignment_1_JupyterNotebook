@@ -174,7 +174,7 @@ def key_option__teleop_operation(k):
        ))
 ```
 Furthermore, functions are defined for the obstacle avoidance and to quit operation.
-```
+```python
  Function to define key to avoid obstacle while accomplishing the target
 def key_option_obstacle_avoidance(k): 
     global avoid
