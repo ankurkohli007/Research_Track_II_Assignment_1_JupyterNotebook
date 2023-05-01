@@ -92,7 +92,7 @@ The Jupyter user interface node is a super easy node. This is used to control th
 Additionally, these modalities can also be managed by using this interface. 
 
 First, imported the required libraries as given below:
-```
+```python
 from ipywidgets import Button, Layout, ButtonStyle, GridBox, VBox, HBox 
 import ipywidgets as widgets
 import rospy
