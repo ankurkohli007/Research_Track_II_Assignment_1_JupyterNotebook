@@ -293,10 +293,10 @@ Figure above shows the graphical representation of the robot's odometery.
 
 Figure above shows the graphical representation of the robot's odometery.
 
-###### Target Node to check the robot's state
+#### Target Node to check the robot's state
 
 This will depicts that whether the robot reached at the target or not. This will define by the graphical representation.
-```
+```python
 class DataVisualization:
     
     # initialization
