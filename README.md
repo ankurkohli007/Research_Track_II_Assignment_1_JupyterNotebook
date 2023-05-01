@@ -114,7 +114,7 @@ rospy.init_node('jupyter_node')
 rospy.set_param('active', 0)
 ```
 Below are the option Key for robots's modalities:
-```
+```python
 k1 = Button(description='Autonomously Reach',
             layout=Layout(width='auto', align="center", grid_area='k1'),
             style=ButtonStyle(button_color='lightblue'))
