@@ -248,6 +248,10 @@ GridBox(children=[k1, k2, k3, k4],
   <img width="1000" height="260" src="https://github.com/ankurkohli007/Research_Track_II_Assignment_1_JupyterNotebook/blob/450b55648c9072b928c5b9238fec8680c0472f74/ImagesJupyter/modalitiesbuttons.png">
 </p>
 
+<p align="center">
+    <em>GUI to Control robot behaviour</em>
+</p>
+
 Figure above shows the display of the buttons for the user interface to control the robot's behvaiour. 
 
 ## Description of the code for the Graphical Representation of the Robot's Odometry & Laser Scanner
