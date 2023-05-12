@@ -403,6 +403,10 @@ plt.show(block=True)
 ```
 ![alt text](ImagesJupyter/robottarget.png) 
 
+<p align="center">
+    <em>Graphical representation of robot's reaching target</em>
+</p>
+
 Figure above shows the graphical representation of the robot's target reach.
 
 * **Note:** For complete Jupyter Code [click here](JupyterNotebook/jupyter_userinterface.ipynb).
