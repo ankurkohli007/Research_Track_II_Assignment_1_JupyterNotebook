@@ -44,6 +44,10 @@ Below is the figure which shows ***Notebook Server***.
 
 ![alt text](ImagesJupyter/jupyterserver.png) 
 
+<p align="center">
+    <em>JupyterNotebbok GUI</em>
+</p>
+
 Now, click on the *New* button on the right corner as shown in the figure above. After clicking on this button, it will open a dialogue box which shows the list. Aslo, this python versions installed in your system. In the *Docker image* you should have only Python3 installed. 
 
 ![alt text](ImagesJupyter/jupyternotebook.png) 
