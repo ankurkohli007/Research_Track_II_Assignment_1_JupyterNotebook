@@ -311,7 +311,11 @@ Figure above shows the graphical representation of the robot's odometery.
   <img width="900" height="700" src="https://github.com/ankurkohli007/Research_Track_II_Assignment_1_JupyterNotebook/blob/0d5dd588362191621f8b20ca1c5f4d920ca5f05d/ImagesJupyter/graphlaser.png">
 </p>
 
-Figure above shows the graphical representation of the robot's odometery.
+<p align="center">
+    <em>Graphical representation of Robot's laser array</em>
+</p>
+
+Figure above shows the graphical representation of the robot's laser array.
 
 #### Target Node to check the robot's state
 
