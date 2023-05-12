@@ -52,6 +52,10 @@ Now, click on the *New* button on the right corner as shown in the figure above.
 
 ![alt text](ImagesJupyter/jupyternotebook.png) 
 
+<p align="center">
+    <em>JupyterNotebook Web Page</em>
+</p>
+
 Figure above shows the first Jupyter Document web page.
 
 ## Jupyter and ROS
